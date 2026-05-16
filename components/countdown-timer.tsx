@@ -65,7 +65,7 @@ export function CountdownTimer() {
             The Big Day Is Coming
           </h3>
           <p className="text-foreground/60 font-light text-sm md:text-base">
-            May 30, 2025 • 4:00 PM
+            27 Jun 2026 • 12:42 PM
           </p>
         </div>
 
