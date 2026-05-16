@@ -22,7 +22,7 @@ export function ButterflyAnimation() {
           id: i,
           left: Math.random() * 100,
           delay: Math.random() * 4,
-          duration: 15 + Math.random() * 8,
+          duration: Math.random() * 8,
           size: 30 + Math.random() * 25,
         })
       }
