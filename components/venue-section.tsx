@@ -67,7 +67,7 @@ export function VenueSection() {
                 </div>
 
                 <a 
-                  href="https://maps.google.com/?q=Kotamgoan,+Yeola,+Nashik+423401" 
+                  href="https://www.google.com/maps/search/?api=1&query=Jagdamba+lawns+Yeola+Nashik" 
                   target="_blank"
                   rel="noopener noreferrer"
                   className="w-full inline-flex items-center justify-center gap-3 px-6 py-4 mt-6 bg-gradient-to-r from-[#B76E79] to-[#D4888F] text-white font-light rounded-full hover:shadow-lg transition-all duration-300 hover:scale-105"
@@ -87,8 +87,7 @@ export function VenueSection() {
               height="500"
               frameBorder="0"
               style={{ border: 0, borderRadius: '1rem' }}
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3754.8899286847576!2d75.1234!3d19.8867!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bdb934b0f000001%3A0x0!2sKotamgoan%2C%20Yeola%2C%20Nashik%20423401!5e0!3m2!1sen!2sin!4v1234567890"
-              allowFullScreen=""
+              src="https://www.google.com/maps?q=Jagdamba+lawns+Yeola+Nashik&z=15&output=embed"
               loading="lazy"
               referrerPolicy="no-referrer-when-downgrade"
               className="rounded-2xl"
