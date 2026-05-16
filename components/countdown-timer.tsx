@@ -20,7 +20,7 @@ export function CountdownTimer() {
   useEffect(() => {
     const calculateTimeLeft = () => {
       // Wedding date: May 30, 2025 at 4:00 PM
-      const weddingDate = new Date('2025-05-30T16:00:00').getTime()
+      const weddingDate = new Date('2026-06-27T12:42:00').getTime()
       const now = new Date().getTime()
       const difference = weddingDate - now
 
