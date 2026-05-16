@@ -58,7 +58,7 @@ export function Footer() {
                 Wedding Celebration
               </p>
               <p className="text-[#4A4A4A] font-light">
-                May 30, 2025
+                Jun 27, 2026
               </p>
             </div>
 
@@ -97,7 +97,7 @@ export function Footer() {
                 <div className="p-2 bg-[#E6D7BE]/30 rounded-full group-hover:bg-[#E6D7BE]/50 transition-colors">
                   <Phone size={18} className="text-[#B76E79]" />
                 </div>
-                <span className="text-sm">+1 (555) 123-4567</span>
+                <span className="text-sm">+91 98342 28332</span>
               </a>
             </div>
           </div>
@@ -156,7 +156,6 @@ export function Footer() {
             <span className="inline-flex items-center gap-1 mx-1">
               <Heart size={14} className="text-[#B76E79] animate-pulse" />
             </span>
-            and love
           </p>
         </div>
       </div>
