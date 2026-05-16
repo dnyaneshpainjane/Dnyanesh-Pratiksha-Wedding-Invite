@@ -1,41 +1,58 @@
 'use client'
 
-import { useMemo } from 'react'
+import { useEffect, useState } from 'react'
 
 interface Butterfly {
   id: number
-  left: number
-  top: number
   size: number
   duration: number
   delay: number
+  startX: number
+  endX: number
+  midX1: number
+  midX2: number
+  rotate: number
 }
 
 export function ButterflyAnimation() {
-  const butterflies = useMemo<Butterfly[]>(() => {
-    return Array.from({ length: 12 }).map((_, i) => ({
-      id: i,
-      left: Math.random() * 100,
-      top: Math.random() * 100,
-      size: 30 + Math.random() * 25,
-      duration: 10 + Math.random() * 10,
-      delay: Math.random() * -20,
-    }))
+  const [butterflies, setButterflies] = useState<Butterfly[]>([])
+
+  useEffect(() => {
+    const createButterflies = () => {
+      const items: Butterfly[] = []
+
+      for (let i = 0; i < 10; i++) {
+        items.push({
+          id: i,
+          size: 28 + Math.random() * 28,
+          duration: 12 + Math.random() * 12,
+          delay: Math.random() * 5,
+          startX: Math.random() * 100,
+          midX1: Math.random() * 100,
+          midX2: Math.random() * 100,
+          endX: Math.random() * 100,
+          rotate: -25 + Math.random() * 50,
+        })
+      }
+
+      setButterflies(items)
+    }
+
+    createButterflies()
   }, [])
 
   return (
-    <div className="fixed inset-0 overflow-hidden pointer-events-none z-20">
+    <div className="fixed inset-0 overflow-hidden pointer-events-none z-30">
       {butterflies.map((butterfly) => (
         <div
           key={butterfly.id}
-          className="butterfly absolute"
+          className="absolute top-[-10%]"
           style={{
-            left: `${butterfly.left}%`,
-            top: `${butterfly.top}%`,
+            left: `${butterfly.startX}%`,
             animation: `
-              move-${butterfly.id} ${butterfly.duration}s ease-in-out infinite alternate
+              butterfly-fly-${butterfly.id} ${butterfly.duration}s linear ${butterfly.delay}s infinite
             `,
-            animationDelay: `${butterfly.delay}s`,
+            willChange: 'transform, opacity',
           }}
         >
           <img
@@ -46,67 +63,84 @@ export function ButterflyAnimation() {
               width: `${butterfly.size}px`,
               height: `${butterfly.size}px`,
               objectFit: 'contain',
-              opacity: 0.9,
+              opacity: 0.95,
               filter:
-                'drop-shadow(0 0 12px rgba(231,180,165,0.7)) hue-rotate(-10deg) saturate(1.3)',
-              animation: 'flutter 0.7s ease-in-out infinite',
+                'drop-shadow(0 0 10px rgba(231,180,165,0.7)) hue-rotate(-10deg) saturate(1.4)',
+              animation: 'wing-flutter 0.6s ease-in-out infinite',
+              userSelect: 'none',
             }}
           />
+          <style jsx>{`
+            @keyframes butterfly-fly-${butterfly.id} {
+              0% {
+                transform: translate(
+                    0vw,
+                    0vh
+                  )
+                  rotate(${butterfly.rotate}deg);
+                opacity: 0;
+              }
+
+              10% {
+                opacity: 1;
+              }
+
+              25% {
+                transform: translate(
+                    ${butterfly.midX1 - butterfly.startX}vw,
+                    25vh
+                  )
+                  rotate(${butterfly.rotate + 20}deg);
+              }
+
+              50% {
+                transform: translate(
+                    ${butterfly.midX2 - butterfly.startX}vw,
+                    50vh
+                  )
+                  rotate(${butterfly.rotate - 15}deg);
+              }
+
+              75% {
+                transform: translate(
+                    ${butterfly.endX - butterfly.startX}vw,
+                    75vh
+                  )
+                  rotate(${butterfly.rotate + 15}deg);
+              }
+
+              100% {
+                transform: translate(
+                    ${Math.random() * 100 - butterfly.startX}vw,
+                    120vh
+                  )
+                  rotate(${butterfly.rotate}deg);
+                opacity: 0;
+              }
+            }
+          `}</style>
         </div>
       ))}
 
       <style jsx>{`
-        .butterfly {
-          will-change: transform;
-        }
-
-        @keyframes flutter {
+        @keyframes wing-flutter {
           0%,
           100% {
             transform: scale(1) rotate(0deg);
           }
 
+          25% {
+            transform: scale(1.08) rotate(2deg);
+          }
+
           50% {
-            transform: scale(1.1) rotate(4deg);
+            transform: scale(1.12) rotate(-2deg);
+          }
+
+          75% {
+            transform: scale(1.05) rotate(1deg);
           }
         }
-
-        ${butterflies
-          .map((b) => {
-            const x1 = Math.random() * 200 - 100
-            const y1 = Math.random() * 200 - 100
-
-            const x2 = Math.random() * 300 - 150
-            const y2 = Math.random() * 300 - 150
-
-            const x3 = Math.random() * 200 - 100
-            const y3 = Math.random() * 200 - 100
-
-            return `
-              @keyframes move-${b.id} {
-                0% {
-                  transform: translate(0px, 0px) rotate(0deg);
-                }
-
-                25% {
-                  transform: translate(${x1}px, ${y1}px) rotate(10deg);
-                }
-
-                50% {
-                  transform: translate(${x2}px, ${y2}px) rotate(-12deg);
-                }
-
-                75% {
-                  transform: translate(${x3}px, ${y3}px) rotate(8deg);
-                }
-
-                100% {
-                  transform: translate(0px, 0px) rotate(-5deg);
-                }
-              }
-            `
-          })
-          .join('\n')}
       `}</style>
     </div>
   )
