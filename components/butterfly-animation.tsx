@@ -1,6 +1,6 @@
 'use client'
 
-import { useEffect, useState } from 'react'
+import { useMemo } from 'react'
 
 interface Butterfly {
   id: number
@@ -11,37 +11,18 @@ interface Butterfly {
 }
 
 export function ButterflyAnimation() {
-  const [butterflies, setButterflies] = useState<Butterfly[]>([])
+  // generate instantly on first render
+  const butterflies = useMemo<Butterfly[]>(() => {
+    return Array.from({ length: 10 }, (_, i) => ({
+      id: i,
+      left: Math.random() * 100,
+      duration: 14 + Math.random() * 8,
+      size: 28 + Math.random() * 24,
 
-  useEffect(() => {
-    const createBatch = (startId: number) => {
-      const items: Butterfly[] = []
-
-      for (let i = 0; i < 8; i++) {
-        items.push({
-          id: startId + i,
-          left: Math.random() * 100,
-          duration: 14 + Math.random() * 8,
-          size: 28 + Math.random() * 24,
-          delay: i * 1.5, // stagger butterflies
-        })
-      }
-
-      return items
-    }
-
-    // initial butterflies
-    setButterflies(createBatch(0))
-
-    // repeat new butterflies before previous batch ends
-    const interval = setInterval(() => {
-      setButterflies((prev) => [
-        ...prev.filter((b) => b.id > Date.now() - 60000), // cleanup old
-        ...createBatch(Date.now()),
-      ])
-    }, 9000) // roughly when butterflies reach ~60%
-
-    return () => clearInterval(interval)
+      // negative delay makes animation already in-progress
+      // so butterflies appear immediately
+      delay: -(Math.random() * 15),
+    }))
   }, [])
 
   return (
@@ -54,7 +35,11 @@ export function ButterflyAnimation() {
             left: `${butterfly.left}%`,
             top: '-100px',
             animation: `
-              butterfly-flight ${butterfly.duration}s linear ${butterfly.delay}s forwards
+              butterfly-flight 
+              ${butterfly.duration}s 
+              linear 
+              ${butterfly.delay}s 
+              infinite
             `,
           }}
         >
