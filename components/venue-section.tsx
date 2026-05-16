@@ -34,7 +34,7 @@ export function VenueSection() {
               <div className="bg-gradient-to-br from-[#E6D7BE]/50 to-[#D9A39E]/40 h-80 md:h-96 flex items-center justify-center relative overflow-hidden">
                 <div className="absolute inset-0 bg-gradient-to-t from-[#B76E79]/20 to-transparent" />
                 <div className="absolute inset-0 flex items-center justify-center">
-                  <MapPin size={120} className="text-[#B76E79]/20" />
+                  <MapPin size={60} className="text-[#B76E79]/20" />
                 </div>
               </div>
               
