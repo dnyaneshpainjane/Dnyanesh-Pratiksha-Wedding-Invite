@@ -46,7 +46,7 @@ export function ButterflyAnimation() {
           }}
         >
           <img
-            src="/butterflies.png"
+            src="butterflies.png"
             alt="butterfly"
             draggable={false}
             style={{
@@ -63,24 +63,24 @@ export function ButterflyAnimation() {
 
       <style jsx>{`
         @keyframes butterfly-flight {
-          20% {
+          0% {
             opacity: 0;
             transform: translateY(0px) translateX(0px) rotate(-10deg);
           }
 
-          30% {
+          10% {
             opacity: 1;
           }
 
-          50% {
+          25% {
             transform: translateY(20vh) translateX(60px) rotate(10deg);
           }
 
-          70% {
+          50% {
             transform: translateY(50vh) translateX(-80px) rotate(-8deg);
           }
 
-          85% {
+          75% {
             transform: translateY(75vh) translateX(120px) rotate(12deg);
           }
 
