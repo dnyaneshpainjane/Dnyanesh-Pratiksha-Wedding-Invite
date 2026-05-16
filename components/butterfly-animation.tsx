@@ -5,36 +5,43 @@ import { useEffect, useState } from 'react'
 interface Butterfly {
   id: number
   left: number
-  delay: number
   duration: number
   size: number
+  delay: number
 }
 
 export function ButterflyAnimation() {
-  const [butterflies, setButterflies] = useState<Butterfly[]>([
-    {
-      id: 0,
-      left: 10,
-      delay: 0,
-      duration: 18,
-      size: 40,
-    },
-  ])
+  const [butterflies, setButterflies] = useState<Butterfly[]>([])
 
   useEffect(() => {
-    const newButterflies: Butterfly[] = []
+    const createBatch = (startId: number) => {
+      const items: Butterfly[] = []
 
-    for (let i = 0; i < 8; i++) {
-      newButterflies.push({
-        id: i,
-        left: Math.random() * 100,
-        delay: 0, // removed start delay
-        duration: 15 + Math.random() * 8,
-        size: 30 + Math.random() * 25,
-      })
+      for (let i = 0; i < 8; i++) {
+        items.push({
+          id: startId + i,
+          left: Math.random() * 100,
+          duration: 14 + Math.random() * 8,
+          size: 28 + Math.random() * 24,
+          delay: i * 1.5, // stagger butterflies
+        })
+      }
+
+      return items
     }
 
-    setButterflies(newButterflies)
+    // initial butterflies
+    setButterflies(createBatch(0))
+
+    // repeat new butterflies before previous batch ends
+    const interval = setInterval(() => {
+      setButterflies((prev) => [
+        ...prev.filter((b) => b.id > Date.now() - 60000), // cleanup old
+        ...createBatch(Date.now()),
+      ])
+    }, 9000) // roughly when butterflies reach ~60%
+
+    return () => clearInterval(interval)
   }, [])
 
   return (
@@ -45,8 +52,10 @@ export function ButterflyAnimation() {
           className="absolute will-change-transform"
           style={{
             left: `${butterfly.left}%`,
-            top: '-80px',
-            animation: `butterfly-flight ${butterfly.duration}s linear infinite`,
+            top: '-100px',
+            animation: `
+              butterfly-flight ${butterfly.duration}s linear ${butterfly.delay}s forwards
+            `,
           }}
         >
           <img
@@ -57,10 +66,11 @@ export function ButterflyAnimation() {
               width: `${butterfly.size}px`,
               height: `${butterfly.size}px`,
               objectFit: 'contain',
-              opacity: 0.9, // always visible
+              opacity: 0.95,
               filter:
-                'drop-shadow(0 0 12px rgba(231, 180, 165, 0.7)) hue-rotate(-10deg) saturate(1.2)',
+                'drop-shadow(0 0 12px rgba(231, 180, 165, 0.7)) hue-rotate(-10deg) saturate(1.3)',
               animation: 'wing-flutter 0.7s ease-in-out infinite',
+              userSelect: 'none',
             }}
           />
         </div>
@@ -69,28 +79,29 @@ export function ButterflyAnimation() {
       <style jsx>{`
         @keyframes butterfly-flight {
           0% {
-            opacity: 0.9;
+            opacity: 0;
             transform: translateY(-10vh) translateX(0px) rotate(-8deg);
           }
 
+          10% {
+            opacity: 1;
+          }
+
           25% {
-            opacity: 0.95;
-            transform: translateY(25vh) translateX(80px) rotate(10deg);
+            transform: translateY(25vh) translateX(70px) rotate(10deg);
           }
 
           50% {
-            opacity: 0.95;
-            transform: translateY(50vh) translateX(-70px) rotate(-10deg);
+            transform: translateY(50vh) translateX(-60px) rotate(-10deg);
           }
 
           75% {
-            opacity: 0.95;
-            transform: translateY(75vh) translateX(100px) rotate(8deg);
+            transform: translateY(75vh) translateX(90px) rotate(8deg);
           }
 
           100% {
-            opacity: 0.9; /* no disappearing */
-            transform: translateY(110vh) translateX(-50px) rotate(-8deg);
+            opacity: 0;
+            transform: translateY(120vh) translateX(-50px) rotate(-8deg);
           }
         }
 
@@ -101,7 +112,7 @@ export function ButterflyAnimation() {
           }
 
           50% {
-            transform: scale(1.1) rotate(2deg);
+            transform: scale(1.12) rotate(2deg);
           }
         }
       `}</style>
