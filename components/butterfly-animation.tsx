@@ -46,7 +46,7 @@ export function ButterflyAnimation() {
           }}
         >
           <img
-            src="/love.png"
+            src="/butterflies.png"
             alt="butterfly"
             draggable={false}
             style={{
