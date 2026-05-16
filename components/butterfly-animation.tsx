@@ -1,4 +1,3 @@
-```tsx id="x3w8p1"
 'use client'
 
 import { useMemo } from 'react'
