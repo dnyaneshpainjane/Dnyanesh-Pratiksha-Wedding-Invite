@@ -63,24 +63,24 @@ export function ButterflyAnimation() {
 
       <style jsx>{`
         @keyframes butterfly-flight {
-          0% {
+          20% {
             opacity: 0;
             transform: translateY(0px) translateX(0px) rotate(-10deg);
           }
 
-          10% {
+          30% {
             opacity: 1;
           }
 
-          25% {
+          50% {
             transform: translateY(20vh) translateX(60px) rotate(10deg);
           }
 
-          50% {
+          70% {
             transform: translateY(50vh) translateX(-80px) rotate(-8deg);
           }
 
-          75% {
+          85% {
             transform: translateY(75vh) translateX(120px) rotate(12deg);
           }
 
