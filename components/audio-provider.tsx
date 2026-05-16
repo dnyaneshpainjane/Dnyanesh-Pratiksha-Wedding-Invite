@@ -86,7 +86,7 @@ export function AudioProvider({ children }: { children: React.ReactNode }) {
         ref={audioRef}
         loop
         crossOrigin="anonymous"
-        src="https://assets.mixkit.co/active_storage/music/2224/2224-preview.mp3"
+        src="wedding_music.mp3"
       />
       {children}
     </AudioContext.Provider>
