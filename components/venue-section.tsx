@@ -43,7 +43,7 @@ export function VenueSection() {
                 <div>
                   <div className="inline-flex items-center gap-2 mb-3 bg-[#F4C2C2]/30 px-4 py-2 rounded-full">
                     <span className="w-2 h-2 rounded-full bg-[#B76E79]" />
-                    <span className="text-sm font-light text-[#B76E79] uppercase tracking-widest">Wedding Ceremony & Reception</span>
+                    <span className="text-sm font-light text-[#B76E79] uppercase tracking-widest">Engagement & Wedding Ceremony</span>
                   </div>
                   <h3 className="font-serif text-3xl md:text-4xl font-light text-[#4A4A4A]">
                     Jagdamba Lawns
