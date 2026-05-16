@@ -1,3 +1,4 @@
+```tsx id="x3w8p1"
 'use client'
 
 import { useMemo } from 'react'
@@ -6,10 +7,9 @@ interface Butterfly {
   id: number
   left: number
   top: number
+  size: number
   duration: number
   delay: number
-  size: number
-  drift: number
 }
 
 export function ButterflyAnimation() {
@@ -18,10 +18,9 @@ export function ButterflyAnimation() {
       id: i,
       left: Math.random() * 100,
       top: Math.random() * 100,
-      duration: 12 + Math.random() * 12,
-      delay: Math.random() * -20, // instantly visible
-      size: 28 + Math.random() * 30,
-      drift: -180 + Math.random() * 360,
+      size: 30 + Math.random() * 25,
+      duration: 10 + Math.random() * 10,
+      delay: Math.random() * -20,
     }))
   }, [])
 
@@ -30,21 +29,18 @@ export function ButterflyAnimation() {
       {butterflies.map((butterfly) => (
         <div
           key={butterfly.id}
-          className="absolute will-change-transform"
+          className="butterfly absolute"
           style={{
             left: `${butterfly.left}%`,
             top: `${butterfly.top}%`,
             animation: `
-              butterfly-float-${butterfly.id}
-              ${butterfly.duration}s
-              ease-in-out
-              ${butterfly.delay}s
-              infinite alternate
+              move-${butterfly.id} ${butterfly.duration}s ease-in-out infinite alternate
             `,
+            animationDelay: `${butterfly.delay}s`,
           }}
         >
           <img
-            src="butterflies.png"
+            src="https://pngimg.com/d/butterfly_PNG1043.png"
             alt="butterfly"
             draggable={false}
             style={{
@@ -53,63 +49,67 @@ export function ButterflyAnimation() {
               objectFit: 'contain',
               opacity: 0.9,
               filter:
-                'drop-shadow(0 0 14px rgba(231,180,165,0.7)) hue-rotate(-8deg) saturate(1.25)',
-              animation: 'wing-flutter 0.7s ease-in-out infinite',
+                'drop-shadow(0 0 12px rgba(231,180,165,0.7)) hue-rotate(-10deg) saturate(1.3)',
+              animation: 'flutter 0.7s ease-in-out infinite',
             }}
           />
         </div>
       ))}
 
       <style jsx>{`
-        @keyframes wing-flutter {
+        .butterfly {
+          will-change: transform;
+        }
+
+        @keyframes flutter {
           0%,
           100% {
             transform: scale(1) rotate(0deg);
           }
 
           50% {
-            transform: scale(1.08) rotate(3deg);
+            transform: scale(1.1) rotate(4deg);
           }
         }
 
         ${butterflies
-          .map(
-            (b) => `
-          @keyframes butterfly-float-${b.id} {
-            0% {
-              transform:
-                translate(0px, 0px)
-                rotate(-8deg);
-            }
+          .map((b) => {
+            const x1 = Math.random() * 200 - 100
+            const y1 = Math.random() * 200 - 100
 
-            25% {
-              transform:
-                translate(${b.drift * 0.3}px, -80px)
-                rotate(10deg);
-            }
+            const x2 = Math.random() * 300 - 150
+            const y2 = Math.random() * 300 - 150
 
-            50% {
-              transform:
-                translate(${b.drift}px, 60px)
-                rotate(-12deg);
-            }
+            const x3 = Math.random() * 200 - 100
+            const y3 = Math.random() * 200 - 100
 
-            75% {
-              transform:
-                translate(${b.drift * 0.5}px, -40px)
-                rotate(8deg);
-            }
+            return `
+              @keyframes move-${b.id} {
+                0% {
+                  transform: translate(0px, 0px) rotate(0deg);
+                }
 
-            100% {
-              transform:
-                translate(${b.drift * -0.3}px, 80px)
-                rotate(-6deg);
-            }
-          }
-        `
-          )
+                25% {
+                  transform: translate(${x1}px, ${y1}px) rotate(10deg);
+                }
+
+                50% {
+                  transform: translate(${x2}px, ${y2}px) rotate(-12deg);
+                }
+
+                75% {
+                  transform: translate(${x3}px, ${y3}px) rotate(8deg);
+                }
+
+                100% {
+                  transform: translate(0px, 0px) rotate(-5deg);
+                }
+              }
+            `
+          })
           .join('\n')}
       `}</style>
     </div>
   )
 }
+```
