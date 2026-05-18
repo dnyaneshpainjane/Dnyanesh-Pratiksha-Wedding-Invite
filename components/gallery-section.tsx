@@ -1,153 +1,174 @@
-'use client'
+"use client"
 
-import { Image as ImageIcon, Sparkles } from 'lucide-react'
+import { useEffect, useRef, useState } from "react"
+import Image from "next/image"
+import { Image as ImageIcon, Sparkles, Heart } from "lucide-react"
+
+const galleryImages = [
+  {
+    src: "/IMG_0307.jpg",
+    alt: "Dnyanesh and Pratiksha at sunset",
+    title: "Pre-Wedding Shoot",
+    span: "md:col-span-2 md:row-span-2",
+  },
+  {
+    src: "/IMG_8812.jpg",
+    alt: "Engagement celebration",
+    title: "Engagement Ceremony",
+    span: "",
+  },
+  {
+    src: "/IMG_0306.jpg",
+    alt: "Coffee date",
+    title: "Beautiful Moments",
+    span: "",
+  },
+  {
+    src: "/gallery-1.jpg",
+    alt: "Adventure together",
+    title: "Our Journey",
+    span: "md:col-span-2",
+  },
+]
 
 export function GallerySection() {
-  const galleryItems = [
-    { id: 1, title: 'Pre-Wedding Shoot', icon: '📸', color: 'from-[#E6D7BE] to-[#F0DDD8]' },
-    { id: 2, title: 'Engagement Ceremony', icon: '💑', color: 'from-[#F4C2C2] to-[#E8D4D0]' },
-    { id: 3, title: 'Mehndi Night', icon: '🎨', color: 'from-[#D9A39E] to-[#E8B8B8]' },
-    { id: 4, title: 'Haldi Celebration', icon: '✨', color: 'from-[#E8D4D0] to-[#F4C2C2]' },
-    { id: 5, title: 'Wedding Day', icon: '💍', color: 'from-[#E8B8B8] to-[#D9A39E]' },
-    { id: 6, title: 'Reception Moments', icon: '🎉', color: 'from-[#F0DDD8] to-[#E6D7BE]' },
-  ]
+  const [isVisible, setIsVisible] = useState(false)
+  const sectionRef = useRef<HTMLElement>(null)
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) setIsVisible(true)
+      },
+      { threshold: 0.12 }
+    )
+
+    if (sectionRef.current) observer.observe(sectionRef.current)
+
+    return () => observer.disconnect()
+  }, [])
 
   return (
-    <section id="gallery" className="py-16 md:py-28 bg-gradient-to-b from-background via-[#FFF8F5] to-secondary/5 relative overflow-hidden">
-      {/* Decorative elements */}
-      <div className="absolute top-20 left-10 w-80 h-80 bg-[#B76E79]/5 rounded-full blur-3xl" />
-      <div className="absolute bottom-20 right-10 w-80 h-80 bg-[#E6D7BE]/5 rounded-full blur-3xl" />
+    <section
+      id="gallery"
+      ref={sectionRef}
+      className="relative overflow-hidden py-16 md:py-24 px-5 bg-gradient-to-b from-background via-[#fff8f5] to-secondary/5"
+    >
+      {/* Background decorations */}
+      <div className="pointer-events-none absolute inset-0 overflow-hidden">
+        <div className="absolute -top-24 left-8 h-64 w-64 rounded-full bg-[#b76e79]/10 blur-3xl animate-float" />
+        <div className="absolute bottom-10 -right-20 h-72 w-72 rounded-full bg-[#e6d7be]/25 blur-3xl animate-float-delayed" />
+        <div className="absolute left-1/2 top-1/2 h-56 w-56 -translate-x-1/2 -translate-y-1/2 rounded-full bg-[#f4c2c2]/15 blur-3xl animate-pulse-soft" />
 
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        {/* Section heading */}
-        <div className="text-center mb-16 md:mb-20 space-y-4 animate-slide-up">
-          <div className="flex items-center justify-center gap-2 mb-4">
-            <ImageIcon className="w-5 h-5 text-primary" />
-            <span className="text-sm font-light text-primary uppercase tracking-widest">Our Memories</span>
-            <ImageIcon className="w-5 h-5 text-primary" />
+        <span className="absolute left-[8%] top-[22%] text-2xl text-[#b76e79]/20 animate-twinkle">
+          ✦
+        </span>
+        <span className="absolute right-[12%] top-[30%] text-3xl text-[#b76e79]/15 animate-orbit">
+          ✧
+        </span>
+        <span className="absolute left-[16%] bottom-[18%] text-2xl text-[#c9a34e]/25 animate-twinkle">
+          ❀
+        </span>
+      </div>
+
+      <div className="relative z-10 max-w-6xl mx-auto">
+        {/* Heading */}
+        <div
+          className={`text-center transition-all duration-1000 ${
+            isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+          }`}
+        >
+          <div className="inline-flex items-center gap-2 px-4 py-1.5 mb-4 rounded-full border border-[#b76e79]/20 bg-white/60 shadow-md shadow-[#b76e79]/10 backdrop-blur-md">
+            <ImageIcon className="w-3.5 h-3.5 text-[#b76e79]" />
+            <p className="text-[11px] tracking-[0.28em] uppercase text-[#b76e79] font-sans font-light">
+              Our Memories
+            </p>
+            <ImageIcon className="w-3.5 h-3.5 text-[#b76e79]" />
           </div>
-          <h2 className="font-serif text-4xl md:text-5xl lg:text-6xl font-light text-primary tracking-tight">
-            Gallery
+
+          <h2 className="font-serif text-4xl md:text-5xl lg:text-6xl font-light text-[#8f4e58] mb-4 text-balance">
+            Our Gallery
           </h2>
-          <p className="text-foreground/60 font-light text-lg max-w-2xl mx-auto">
-            Beautiful moments captured from our journey together
+
+          <p className="max-w-xl mx-auto text-[#4a4a4a]/60 font-sans font-light leading-7 text-sm md:text-base">
+            Beautiful moments captured from our journey together.
           </p>
+
+          <div className="relative w-20 h-px bg-[#b76e79]/30 mx-auto mt-8 mb-12">
+            <div className="absolute left-1/2 top-1/2 h-2.5 w-2.5 -translate-x-1/2 -translate-y-1/2 rotate-45 bg-[#b76e79]/60" />
+          </div>
         </div>
 
-        {/* Gallery grid - Staggered beautiful layout */}
-        <div className="space-y-8 md:space-y-0">
-          {/* Row 1: 2 items */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
-            {galleryItems.slice(0, 2).map((item, index) => (
-              <div
-                key={item.id}
-                className={`group relative aspect-square rounded-2xl overflow-hidden cursor-pointer animate-fade-in-up shadow-lg hover:shadow-2xl transition-all duration-500 hover:scale-105`}
-                style={{ animationDelay: `${index * 80}ms` }}
-              >
-                {/* Background gradient */}
-                <div className={`absolute inset-0 bg-gradient-to-br ${item.color}`} />
-                
-                {/* Overlay on hover */}
-                <div className="absolute inset-0 bg-[#B76E79]/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                
-                {/* Decorative light */}
-                <div className="absolute -top-20 -right-20 w-40 h-40 bg-white/30 rounded-full group-hover:scale-150 transition-transform duration-500" />
-                
-                {/* Content */}
-                <div className="relative h-full flex flex-col items-center justify-center text-center p-6 space-y-4">
-                  <div className="text-7xl md:text-8xl group-hover:scale-125 transition-transform duration-500 will-change-transform animate-glow-pulse">
-                    {item.icon}
-                  </div>
-                  <div className="space-y-2">
-                    <h3 className="font-serif text-xl md:text-2xl text-[#4A4A4A] font-light">
-                      {item.title}
-                    </h3>
-                    <div className="h-px w-8 bg-[#B76E79]/40 mx-auto group-hover:w-16 transition-all duration-300" />
-                  </div>
-                </div>
-                
-                {/* Corner decoration */}
-                <div className="absolute top-4 right-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                  <Sparkles className="w-5 h-5 text-white animate-bounce" />
-                </div>
-              </div>
-            ))}
-          </div>
+        {/* Gallery grid */}
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-4 auto-rows-[150px] sm:auto-rows-[180px] md:auto-rows-[170px]">
+          {galleryImages.map((image, index) => (
+            <div
+              key={image.src}
+              className={`group relative overflow-hidden rounded-2xl md:rounded-3xl border border-white/70 shadow-lg shadow-[#b76e79]/10 ${image.span} transition-all duration-1000 hover:-translate-y-1 hover:shadow-2xl hover:shadow-[#b76e79]/20 ${
+                isVisible
+                  ? "opacity-100 translate-y-0"
+                  : "opacity-0 translate-y-8"
+              }`}
+              style={{ transitionDelay: `${160 + index * 120}ms` }}
+            >
+              <Image
+                src={image.src}
+                alt={image.alt}
+                fill
+                className="object-cover transition-transform duration-700 group-hover:scale-110"
+                sizes={
+                  image.span.includes("col-span-2")
+                    ? "(max-width: 768px) 100vw, 50vw"
+                    : "(max-width: 768px) 50vw, 25vw"
+                }
+              />
 
-          {/* Row 2: 2 items */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 md:mt-8">
-            {galleryItems.slice(2, 4).map((item, index) => (
-              <div
-                key={item.id}
-                className={`group relative aspect-square rounded-2xl overflow-hidden cursor-pointer animate-fade-in-up shadow-lg hover:shadow-2xl transition-all duration-500 hover:scale-105`}
-                style={{ animationDelay: `${(index + 2) * 80}ms` }}
-              >
-                {/* Background gradient */}
-                <div className={`absolute inset-0 bg-gradient-to-br ${item.color}`} />
-                
-                {/* Overlay on hover */}
-                <div className="absolute inset-0 bg-[#B76E79]/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                
-                {/* Decorative light */}
-                <div className="absolute -top-20 -right-20 w-40 h-40 bg-white/30 rounded-full group-hover:scale-150 transition-transform duration-500" />
-                
-                {/* Content */}
-                <div className="relative h-full flex flex-col items-center justify-center text-center p-6 space-y-4">
-                  <div className="text-7xl md:text-8xl group-hover:scale-125 transition-transform duration-500 will-change-transform animate-glow-pulse">
-                    {item.icon}
-                  </div>
-                  <div className="space-y-2">
-                    <h3 className="font-serif text-xl md:text-2xl text-[#4A4A4A] font-light">
-                      {item.title}
-                    </h3>
-                    <div className="h-px w-8 bg-[#B76E79]/40 mx-auto group-hover:w-16 transition-all duration-300" />
-                  </div>
-                </div>
-                
-                {/* Corner decoration */}
-                <div className="absolute top-4 right-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                  <Sparkles className="w-5 h-5 text-white animate-bounce" />
-                </div>
-              </div>
-            ))}
-          </div>
+              {/* Soft overlay */}
+              <div className="absolute inset-0 bg-gradient-to-t from-[#3f3434]/55 via-[#3f3434]/10 to-transparent opacity-80 transition-opacity duration-500 group-hover:opacity-95" />
 
-          {/* Row 3: 2 items - Centered on larger screens */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 md:mt-8 md:max-w-2xl md:mx-auto">
-            {galleryItems.slice(4, 6).map((item, index) => (
-              <div
-                key={item.id}
-                className={`group relative aspect-square rounded-2xl overflow-hidden cursor-pointer animate-fade-in-up shadow-lg hover:shadow-2xl transition-all duration-500 hover:scale-105`}
-                style={{ animationDelay: `${(index + 4) * 80}ms` }}
-              >
-                {/* Background gradient */}
-                <div className={`absolute inset-0 bg-gradient-to-br ${item.color}`} />
-                
-                {/* Overlay on hover */}
-                <div className="absolute inset-0 bg-[#B76E79]/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                
-                {/* Decorative light */}
-                <div className="absolute -top-20 -right-20 w-40 h-40 bg-white/30 rounded-full group-hover:scale-150 transition-transform duration-500" />
-                
-                {/* Content */}
-                <div className="relative h-full flex flex-col items-center justify-center text-center p-6 space-y-4">
-                  <div className="text-7xl md:text-8xl group-hover:scale-125 transition-transform duration-500 will-change-transform animate-glow-pulse">
-                    {item.icon}
+              {/* Hover shine */}
+              <div className="absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-white/35 to-transparent transition-transform duration-1000 group-hover:translate-x-full" />
+
+              {/* Corner glow */}
+              <div className="absolute -right-10 -top-10 h-28 w-28 rounded-full bg-white/25 blur-xl transition-transform duration-700 group-hover:scale-150" />
+
+              {/* Top sparkle */}
+              <div className="absolute right-3 top-3 flex h-8 w-8 items-center justify-center rounded-full bg-white/25 opacity-0 backdrop-blur-md transition-all duration-500 group-hover:opacity-100 group-hover:rotate-12">
+                <Sparkles className="h-4 w-4 text-white" />
+              </div>
+
+              {/* Caption */}
+              <div className="absolute inset-x-0 bottom-0 p-4 md:p-5">
+                <div className="translate-y-2 transition-transform duration-500 group-hover:translate-y-0">
+                  <p className="mb-1 text-[10px] md:text-xs uppercase tracking-[0.22em] text-white/75 font-sans font-light">
+                    Memory {String(index + 1).padStart(2, "0")}
+                  </p>
+
+                  <h3 className="font-serif text-lg md:text-2xl font-light text-white drop-shadow-sm">
+                    {image.title}
+                  </h3>
+
+                  <div className="mt-3 flex items-center gap-2 opacity-0 transition-opacity duration-500 group-hover:opacity-100">
+                    <div className="h-px w-8 bg-white/60" />
+                    <Heart className="h-3.5 w-3.5 text-white/80 fill-white/20" />
                   </div>
-                  <div className="space-y-2">
-                    <h3 className="font-serif text-xl md:text-2xl text-[#4A4A4A] font-light">
-                      {item.title}
-                    </h3>
-                    <div className="h-px w-8 bg-[#B76E79]/40 mx-auto group-hover:w-16 transition-all duration-300" />
-                  </div>
-                </div>
-                
-                {/* Corner decoration */}
-                <div className="absolute top-4 right-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                  <Sparkles className="w-5 h-5 text-white animate-bounce" />
                 </div>
               </div>
-            ))}
+            </div>
+          ))}
+        </div>
+
+        {/* Bottom note */}
+        <div
+          className={`mt-10 text-center transition-all duration-1000 delay-700 ${
+            isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-7"
+          }`}
+        >
+          <div className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full border border-[#b76e79]/15 bg-white/60 shadow-sm shadow-[#b76e79]/10 backdrop-blur-md">
+            <Heart className="w-3.5 h-3.5 text-[#b76e79] fill-[#b76e79]/20" />
+            <span className="text-xs md:text-sm text-[#4a4a4a]/70 font-sans font-light">
+              A glimpse of memories close to our hearts.
+            </span>
           </div>
         </div>
       </div>
