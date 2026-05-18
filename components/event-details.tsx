@@ -1,125 +1,260 @@
-'use client'
+"use client"
 
-import { Calendar, Clock, MapPin, Sparkles } from 'lucide-react'
+import { useEffect, useRef, useState } from "react"
+import {
+  MapPin,
+  Clock,
+  Calendar,
+  Sparkles,
+  Heart,
+  Music,
+  Flower2,
+  Gem,
+} from "lucide-react"
+
+const events = [
+  {
+    icon: Gem,
+    emoji: "💍",
+    title: "Engagement Ceremony",
+    date: "26th Jun 2026",
+    time: "6:30 PM",
+    location: "Jagdamba Lawns, Yeola",
+    address: "Kotamgoan, Yeola, Nashik",
+    description:
+      "A beautiful beginning to our forever, surrounded by blessings, smiles, and the warmth of family.",
+    gradient: "from-[#fff1f2] via-[#fde2e4] to-[#f8cfd4]",
+  },
+  {
+    icon: Music,
+    emoji: "💃",
+    title: "Sangeet",
+    date: "26th Jun 2026",
+    time: "8:30 PM",
+    location: "Jagdamba Lawns, Yeola",
+    address: "Kotamgoan, Yeola, Nashik",
+    description:
+      "An evening of music, dance, dinner, laughter, and joyful memories with everyone dear to us.",
+    gradient: "from-[#fff7ed] via-[#ffe4d6] to-[#f4c2c2]",
+  },
+  {
+    icon: Flower2,
+    emoji: "🏵️",
+    title: "Haldi Ceremony",
+    date: "27th Jun 2026",
+    time: "7:30 AM",
+    location: "Jagdamba Lawns, Yeola",
+    address: "Kotamgoan, Yeola, Nashik",
+    description:
+      "A sacred turmeric ritual filled with sunshine, blessings, tradition, and colorful celebrations.",
+    gradient: "from-[#fffbea] via-[#f8e7b8] to-[#ecd79f]",
+  },
+  {
+    icon: Heart,
+    emoji: "❤️",
+    title: "Wedding",
+    date: "27th Jun 2026",
+    time: "12:42 PM",
+    location: "Jagdamba Lawns, Yeola",
+    address: "Kotamgoan, Yeola, Nashik",
+    description:
+      "The sacred union of two souls and two families, celebrated with love, vows, and eternal blessings.",
+    gradient: "from-[#fff1f2] via-[#f6c8ce] to-[#d9a39e]",
+  },
+]
 
 export function EventDetails() {
-  const events = [
-    {
-      name: 'Engagement Ceremony',
-      date: 'Jun 26, 2026',
-      time: '6:30 PM',
-      location: 'Jagdamba Lawns',
-      description: 'An evening of henna, music, and celebration with our beloved family',
-      color: 'from-[#E8B8B8] to-[#F4C2C2]',
-      icon: '💍',
-    },
-    {
-      name: 'Sangeet',
-      date: 'Jun 26, 2026',
-      time: '8:30 PM',
-      location: 'Jagdamba Lawns',
-      description: 'Dinner, dancing, and merriment celebrating our love with everyone dear',
-      color: 'from-[#F4C2C2] to-[#E8D4D0]',
-      icon: '💃',
-    },
-    {
-      name: 'Haldi Ceremony',
-      date: 'Jun 27, 2026',
-      time: '7:30 AM',
-      location: 'Jagdamba Lawns',
-      description: 'Traditional turmeric ceremony blessing us with happiness and prosperity',
-      color: 'from-[#E6D7BE] to-[#F0DDD8]',
-      icon: '🏵️',
-    },
-    {
-      name: 'Wedding Ceremony',
-      date: 'Jun 27, 2026',
-      time: '12:42 PM',
-      location: 'Jagdamba Lawns',
-      description: 'The sacred union of two souls and families in a divine ceremony',
-      color: 'from-[#D9A39E] to-[#E8B8B8]',
-      icon: '❤️',
-    },
+  const [isVisible, setIsVisible] = useState(false)
+  const sectionRef = useRef<HTMLElement>(null)
 
-  ]
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsVisible(true)
+        }
+      },
+      { threshold: 0.18 }
+    )
+
+    if (sectionRef.current) {
+      observer.observe(sectionRef.current)
+    }
+
+    return () => observer.disconnect()
+  }, [])
 
   return (
-    <section id="events" className="py-16 md:py-28 bg-gradient-to-b from-background via-[#FFF8F5] to-secondary/10 relative overflow-hidden">
-      <div className="absolute top-20 right-10 w-40 h-40 bg-[#B76E79]/5 rounded-full blur-3xl" />
-      <div className="absolute bottom-20 left-10 w-40 h-40 bg-[#E6D7BE]/5 rounded-full blur-3xl" />
-      
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        {/* Section heading */}
-        <div className="text-center mb-16 md:mb-20 space-y-4 animate-slide-up">
-          <div className="flex items-center justify-center gap-2 mb-4">
-            <Sparkles className="w-5 h-5 text-primary" />
-            <span className="text-sm font-light text-primary uppercase tracking-widest">Wedding Events</span>
-            <Sparkles className="w-5 h-5 text-primary" />
+    <section
+      id="details"
+      ref={sectionRef}
+      className="relative overflow-hidden py-24 md:py-32 px-6 bg-[radial-gradient(circle_at_top,#fff8f5_0%,#fffaf8_42%,#f8ebe6_100%)]"
+    >
+      {/* Soft background decorations */}
+      <div className="pointer-events-none absolute inset-0 overflow-hidden">
+        <div className="absolute -top-20 -left-20 h-72 w-72 rounded-full bg-[#f4c2c2]/30 blur-3xl animate-float" />
+        <div className="absolute top-40 -right-24 h-80 w-80 rounded-full bg-[#e6d7be]/35 blur-3xl animate-float-delayed" />
+        <div className="absolute bottom-10 left-1/2 h-72 w-72 -translate-x-1/2 rounded-full bg-[#b76e79]/10 blur-3xl animate-pulse-soft" />
+
+        <span className="absolute left-[8%] top-[18%] text-3xl text-[#b76e79]/20 animate-twinkle">
+          ✦
+        </span>
+        <span className="absolute right-[10%] top-[26%] text-4xl text-[#b76e79]/15 animate-orbit">
+          ✧
+        </span>
+        <span className="absolute left-[14%] bottom-[18%] text-3xl text-[#c9a34e]/25 animate-twinkle">
+          ❀
+        </span>
+      </div>
+
+      <div className="relative z-10 max-w-6xl mx-auto">
+        {/* Heading */}
+        <div
+          className={`text-center transition-all duration-1000 ${
+            isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+          }`}
+        >
+          <div className="inline-flex items-center gap-3 px-5 py-2 mb-5 rounded-full border border-[#b76e79]/20 bg-white/60 shadow-lg shadow-[#b76e79]/10 backdrop-blur-md">
+            <Sparkles className="w-4 h-4 text-[#b76e79]" />
+            <p className="text-xs tracking-[0.35em] uppercase text-[#b76e79] font-sans font-light">
+              When & Where
+            </p>
+            <Sparkles className="w-4 h-4 text-[#b76e79]" />
           </div>
-          <h2 className="font-serif text-4xl md:text-5xl lg:text-6xl font-light text-primary tracking-tight">
-            Celebrate With Us
+
+          <h2 className="font-serif text-4xl md:text-5xl lg:text-7xl font-light text-[#8f4e58] mb-6 text-balance">
+            Event Details
           </h2>
-          <p className="text-foreground/60 font-light text-lg max-w-2xl mx-auto">
-            Join us for an unforgettable series of celebrations filled with love, joy, and cherished moments
+
+          <p className="max-w-2xl mx-auto text-[#4a4a4a]/60 font-sans font-light leading-8 text-base md:text-lg">
+            Join us for two unforgettable days filled with rituals, music,
+            blessings, laughter, and love.
           </p>
+
+          <div className="relative w-28 h-px bg-[#b76e79]/30 mx-auto mt-10 mb-16">
+            <div className="absolute left-1/2 top-1/2 h-3 w-3 -translate-x-1/2 -translate-y-1/2 rotate-45 bg-[#b76e79]/60" />
+          </div>
         </div>
 
-        {/* Events timeline */}
-        <div className="space-y-6 md:space-y-8">
+        {/* Cards */}
+        <div className="grid md:grid-cols-2 gap-8 lg:gap-10">
           {events.map((event, index) => (
             <div
-              key={index}
-              className="group animate-fade-in-up"
-              style={{ animationDelay: `${index * 100}ms` }}
+              key={event.title}
+              className={`group relative transition-all duration-1000 ${
+                isVisible
+                  ? "opacity-100 translate-y-0"
+                  : "opacity-0 translate-y-10"
+              }`}
+              style={{ transitionDelay: `${180 + index * 150}ms` }}
             >
-              <div className={`relative bg-gradient-to-br ${event.color} rounded-2xl p-8 md:p-10 border border-[#B76E79]/10 shadow-xl hover:shadow-2xl transition-all duration-500 hover:scale-105 overflow-hidden group`}>
-                {/* Decorative elements with animations */}
-                <div className="absolute top-0 right-0 w-24 h-24 bg-white/30 rounded-full -mr-12 -mt-12 group-hover:scale-150 transition-transform duration-700" />
-                <div className="absolute bottom-0 left-0 w-32 h-32 bg-white/20 rounded-full -ml-16 -mb-16 group-hover:scale-150 transition-transform duration-700" />
-                
-                {/* Sparkle effects */}
-                <div className="absolute top-4 right-4 w-2 h-2 bg-white rounded-full opacity-0 group-hover:opacity-100 animate-twinkle" />
-                <div className="absolute bottom-4 left-4 w-2 h-2 bg-white rounded-full opacity-0 group-hover:opacity-100 animate-twinkle" style={{ animationDelay: '0.5s' }} />
-                
-                <div className="relative z-10 flex flex-col md:flex-row gap-6 md:gap-8">
-                  {/* Icon with animation */}
-                  <div className="flex-shrink-0">
-                    <div className="flex items-center justify-center w-16 h-16 md:w-20 md:h-20 bg-white/60 rounded-full text-3xl md:text-4xl backdrop-blur-sm shadow-lg group-hover:shadow-xl group-hover:scale-110 transition-all duration-300 will-change-transform">
-                      <span className="group-hover:animate-bounce inline-block">{event.icon}</span>
+              <div
+                className={`relative h-full overflow-hidden rounded-[2rem] border border-white/70 bg-gradient-to-br ${event.gradient} p-[1px] shadow-xl shadow-[#b76e79]/10 transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl hover:shadow-[#b76e79]/20`}
+              >
+                {/* Animated shine */}
+                <div className="absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-white/40 to-transparent transition-transform duration-1000 group-hover:translate-x-full" />
+
+                <div className="relative h-full rounded-[calc(2rem-1px)] bg-white/55 p-7 md:p-9 backdrop-blur-xl">
+                  {/* Decorative emoji watermark */}
+                  <div className="absolute -right-4 -top-6 text-8xl opacity-10 transition-all duration-700 group-hover:scale-125 group-hover:rotate-12">
+                    {event.emoji}
+                  </div>
+
+                  {/* Top icon */}
+                  <div className="flex items-center gap-4 mb-7">
+                    <div className="relative">
+                      <div className="absolute inset-0 rounded-full bg-[#b76e79]/20 blur-xl transition-all duration-500 group-hover:scale-150" />
+                      <div className="relative w-14 h-14 rounded-full bg-white/75 border border-white shadow-lg flex items-center justify-center transition-all duration-500 group-hover:rotate-6 group-hover:scale-110">
+                        <event.icon className="w-6 h-6 text-[#b76e79]" />
+                      </div>
+                    </div>
+
+                    <div>
+                      <p className="text-xs tracking-[0.25em] uppercase text-[#b76e79]/70 font-sans font-light mb-1">
+                        Celebration {String(index + 1).padStart(2, "0")}
+                      </p>
+                      <h3 className="font-serif text-2xl md:text-3xl font-light text-[#3f3434]">
+                        {event.title}
+                      </h3>
                     </div>
                   </div>
 
-                  {/* Content */}
-                  <div className="flex-1">
-                    <h3 className="font-serif text-2xl md:text-3xl font-light text-[#4A4A4A] mb-4">
-                      {event.name}
-                    </h3>
+                  {/* Info */}
+                  <div className="space-y-4 mb-7">
+                    <InfoRow
+                      icon={<Calendar className="w-4 h-4" />}
+                      label={event.date}
+                    />
 
-                    <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-4">
-                      <div className="flex items-center gap-3 bg-white/50 rounded-lg px-4 py-3 backdrop-blur-sm">
-                        <Calendar size={18} className="text-[#B76E79] flex-shrink-0" />
-                        <span className="text-[#4A4A4A] font-light text-sm">{event.date}</span>
-                      </div>
-                      <div className="flex items-center gap-3 bg-white/50 rounded-lg px-4 py-3 backdrop-blur-sm">
-                        <Clock size={18} className="text-[#B76E79] flex-shrink-0" />
-                        <span className="text-[#4A4A4A] font-light text-sm">{event.time}</span>
-                      </div>
-                      <div className="flex items-center gap-3 bg-white/50 rounded-lg px-4 py-3 backdrop-blur-sm">
-                        <MapPin size={18} className="text-[#B76E79] flex-shrink-0" />
-                        <span className="text-[#4A4A4A] font-light text-sm">{event.location}</span>
+                    <InfoRow
+                      icon={<Clock className="w-4 h-4" />}
+                      label={event.time}
+                    />
+
+                    <div className="flex items-start gap-3 rounded-2xl bg-white/55 border border-white/70 px-4 py-3 shadow-sm backdrop-blur-sm">
+                      <span className="mt-0.5 flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-[#b76e79]/10 text-[#b76e79]">
+                        <MapPin className="w-4 h-4" />
+                      </span>
+                      <div>
+                        <p className="text-[#3f3434] font-sans text-sm md:text-base">
+                          {event.location}
+                        </p>
+                        <p className="text-[#4a4a4a]/55 text-xs md:text-sm font-sans font-light mt-0.5">
+                          {event.address}
+                        </p>
                       </div>
                     </div>
+                  </div>
 
-                    <p className="text-[#4A4A4A] leading-relaxed font-light text-base md:text-lg">
-                      {event.description}
-                    </p>
+                  <p className="text-[#4a4a4a]/70 font-sans font-light leading-relaxed text-pretty">
+                    {event.description}
+                  </p>
+
+                  {/* Bottom ornamental line */}
+                  <div className="mt-8 flex items-center gap-3">
+                    <div className="h-px flex-1 bg-gradient-to-r from-transparent via-[#b76e79]/30 to-[#b76e79]/10" />
+                    <Heart className="w-4 h-4 text-[#b76e79]/50 fill-[#b76e79]/20" />
+                    <div className="h-px flex-1 bg-gradient-to-r from-[#b76e79]/10 via-[#b76e79]/30 to-transparent" />
                   </div>
                 </div>
               </div>
             </div>
           ))}
         </div>
+
+        {/* Bottom message */}
+        <div
+          className={`mt-16 text-center transition-all duration-1000 delay-700 ${
+            isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+          }`}
+        >
+          <div className="inline-flex flex-col sm:flex-row items-center gap-3 px-7 py-4 rounded-full border border-[#b76e79]/15 bg-white/60 shadow-lg shadow-[#b76e79]/10 backdrop-blur-md">
+            <Heart className="w-5 h-5 text-[#b76e79] fill-[#b76e79]/20" />
+            <span className="text-sm md:text-base text-[#4a4a4a]/70 font-sans font-light">
+              Your presence will make our celebration even more special.
+            </span>
+          </div>
+        </div>
       </div>
     </section>
+  )
+}
+
+function InfoRow({
+  icon,
+  label,
+}: {
+  icon: React.ReactNode
+  label: string
+}) {
+  return (
+    <div className="flex items-center gap-3 rounded-2xl bg-white/55 border border-white/70 px-4 py-3 shadow-sm backdrop-blur-sm transition-all duration-300 hover:bg-white/80 hover:translate-x-1">
+      <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-[#b76e79]/10 text-[#b76e79]">
+        {icon}
+      </span>
+      <span className="text-[#3f3434] font-sans text-sm md:text-base">
+        {label}
+      </span>
+    </div>
   )
 }
