@@ -20,11 +20,11 @@ const familyDetails = [
     details: [
       {
         label: 'Parents',
-        value: 'Shri Prakash & Smt. Asha Painjane',
+        value: 'Shri Prakash & Sau. Asha Painjane',
       },
       {
         label: 'Grandparents',
-        value: 'Shri Gangadhar & Smt. Chandrakala Satpute',
+        value: 'Shri Gangadhar & Sau. Chandrakala Satpute',
       },
       {
         label: 'Siblings',
@@ -45,15 +45,15 @@ const familyDetails = [
     details: [
       {
         label: 'Parents',
-        value: 'Shri Balkrushna & Smt. Sarla Wade',
+        value: 'Shri Balkrushna & Sau. Sarla Wade',
       },
       {
         label: 'Grandparents',
-        value: 'Shri Champalal & Smt. Wade',
+        value: 'Shri Champalal & Smt. __ Wade',
       },
       {
         label: 'Siblings',
-        value: 'Rahul',
+        value: 'Rahul, Rohan, Neharika',
       },
       {
         label: 'Family Love',
