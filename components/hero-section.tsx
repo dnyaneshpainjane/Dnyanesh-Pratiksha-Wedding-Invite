@@ -15,6 +15,14 @@ export function HeroSection() {
       id="hero"
       className="relative overflow-hidden py-12 md:py-16 lg:py-20"
     >
+      {/* Ganpati Icon */}
+      <div className="relative z-20 flex justify-center mb-4">
+        <img
+            src="/ganpati.png"
+                alt="Ganpati"
+                    className="h-14 w-14 md:h-16 md:w-16 object-contain opacity-90 drop-shadow-md animate-fade-in"
+        />
+      </div>
       {/* Background image */}
       <div
         className="absolute inset-0 bg-cover bg-center bg-no-repeat"
