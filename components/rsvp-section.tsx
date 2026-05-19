@@ -20,7 +20,7 @@ const familyDetails = [
     details: [
       {
         label: 'Parents',
-        value: 'Shri [Name] & Smt. [Name]',
+        value: 'Shri Prakash & Smt. Asha Painjane',
       },
       {
         label: 'Grandparents',
@@ -28,11 +28,11 @@ const familyDetails = [
       },
       {
         label: 'Siblings',
-        value: '[Names]',
+        value: 'Priyanka, Nilima, Neha, Deepika, Prathmesh',
       },
       {
         label: 'Family Love',
-        value: 'Uncles, aunts, cousins, and little ones',
+        value: 'Aaradhya, Arnit, Nainish, Kesari',
       },
     ],
   },
@@ -45,7 +45,7 @@ const familyDetails = [
     details: [
       {
         label: 'Parents',
-        value: 'Shri Prakash & Smt. Asha Painjane',
+        value: 'Shri Balkrushna & Smt. Sarla Wade',
       },
       {
         label: 'Grandparents',
@@ -53,11 +53,11 @@ const familyDetails = [
       },
       {
         label: 'Siblings',
-        value: 'Priyanka, Nilima, Neha',
+        value: 'Rahul',
       },
       {
         label: 'Family Love',
-        value: 'Aaradhya, Arnit, Nainish, Kesari',
+        value: 'AAA',
       },
     ],
   },
