@@ -121,7 +121,7 @@ export function RSVPSection() {
           </div>
 
           <h2 className="font-serif text-4xl md:text-5xl lg:text-6xl font-medium text-[#8f4e58] mb-4 text-balance">
-            Our Family Circle
+            The Hearts Behind Our Story
           </h2>
 
           <p className="max-w-xl mx-auto text-[#4a4a4a]/70 font-sans font-normal leading-7 text-sm md:text-base">
