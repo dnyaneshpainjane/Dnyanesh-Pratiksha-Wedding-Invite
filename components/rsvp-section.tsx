@@ -49,7 +49,7 @@ const familyDetails = [
       },
       {
         label: 'Grandparents',
-        value: 'With blessings from our beloved elders',
+        value: 'Shri Champalal & Smt. Wade',
       },
       {
         label: 'Siblings',
@@ -57,7 +57,7 @@ const familyDetails = [
       },
       {
         label: 'Family Love',
-        value: 'AAA',
+        value: 'Gauri, Tanvi, Laksha, Mahi, Shivansh, Moksha, Vibhuti',
       },
     ],
   },
