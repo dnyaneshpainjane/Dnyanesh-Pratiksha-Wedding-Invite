@@ -119,29 +119,6 @@ export function HeroSection() {
             <CountdownTimer />
           </div>
 
-          {/* CTA Button */}
-          <div className="pt-2 animate-bounce-slow">
-            <a
-              href="#events"
-              className="inline-flex items-center justify-center rounded-full bg-gradient-to-r from-[#B76E79] to-[#D4888F] px-6 py-3 text-sm font-medium tracking-wide text-white shadow-lg transition-all duration-300 hover:scale-105 hover:shadow-xl md:px-8 md:py-3.5 md:text-base"
-            >
-              Explore Events
-              <svg
-                className="ml-2 h-4 w-4 animate-pulse"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="2"
-              >
-                <path d="M7 10l5 5 5-5" />
-              </svg>
-            </a>
-          </div>
-
-          {/* Decorative bottom line */}
-          <div className="flex items-center justify-center gap-4 pt-5 opacity-40">
-            <div className="h-px w-12 bg-gradient-to-r from-transparent via-primary to-transparent" />
-          </div>
         </div>
       </div>
     </section>
