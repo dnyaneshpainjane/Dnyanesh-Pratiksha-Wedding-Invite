@@ -41,9 +41,7 @@ export function VenueSection() {
           </h2>
 
           <p className="max-w-xl mx-auto text-[#4a4a4a]/70 font-sans font-normal leading-7 text-sm md:text-base">
-            We would be delighted to celebrate our special day at{' '}
-            <span className="font-semibold text-[#8f4e58]">Jagdamba Lawns</span>,
-            a beautiful venue for love, blessings, and family.
+            We would be delighted to celebrate our special day at Jagdamba Lawns.
           </p>
 
           <div className="relative w-20 h-px bg-[#b76e79]/35 mx-auto mt-7 mb-10">
