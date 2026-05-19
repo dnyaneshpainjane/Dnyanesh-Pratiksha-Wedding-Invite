@@ -77,7 +77,7 @@ export function HeroSection() {
 
             <div className="space-y-1.5 md:space-y-2">
               <p className="text-center text-xs font-medium uppercase tracking-[0.32em] text-[#B76E79] md:text-sm">
-                Our Love Story
+                Our Story
               </p>
 
               <p className="text-sm font-light italic text-primary/70 md:text-base">
