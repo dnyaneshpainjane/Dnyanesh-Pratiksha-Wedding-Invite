@@ -148,12 +148,12 @@ export function VenueSection() {
 
               <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-[#b76e79]/15 via-transparent to-white/5" />
 
-              <div className="pointer-events-none absolute left-4 top-4 inline-flex items-center gap-2.5 rounded-full border border-white/70 bg-white/75 px-4 py-2 shadow-sm backdrop-blur-md">
+              {/* <div className="pointer-events-none absolute left-4 top-4 inline-flex items-center gap-2.5 rounded-full border border-white/70 bg-white/75 px-4 py-2 shadow-sm backdrop-blur-md">
                 <MapPin className="w-4 h-4 text-[#b76e79]" />
                 <span className="text-sm text-[#3f3434] font-sans font-semibold">
                   Jagdamba Lawns
                 </span>
-              </div>
+              </div> */}
             </div>
           </div>
         </div>
