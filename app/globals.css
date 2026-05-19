@@ -398,3 +398,8 @@
 .animate-orbit {
   animation: orbit 9s linear infinite;
 }
+@layer utilities {
+  .font-script {
+    font-family: 'Great Vibes', cursive;
+  }
+}
