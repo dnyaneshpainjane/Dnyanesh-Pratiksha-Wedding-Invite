@@ -12,7 +12,7 @@ export function Navigation() {
     { label: 'Events', href: '#events' },
     { label: 'Venue', href: '#venue' },
     { label: 'Gallery', href: '#gallery' },
-    { label: 'RSVP', href: '#rsvp' },
+    { label: 'Family', href: '#rsvp' },
   ]
 
   return (
