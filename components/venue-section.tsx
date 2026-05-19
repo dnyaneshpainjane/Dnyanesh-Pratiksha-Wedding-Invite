@@ -90,7 +90,7 @@ export function VenueSection() {
                 </div>
 
                 <p className="text-[#4a4a4a]/75 font-sans font-normal leading-6 text-sm md:text-base text-pretty">
-                  Join us as we step into our next chapter with a sweet, simple gathering at the <span className="font-semibold text-[#8f4e58]">lovely</span> Venue.
+                  Join us as we step into our next chapter with a sweet, simple gathering at the <span className="font-semibold text-[#8f4e58]">lovely</span> venue.
                 </p>
 
                 <div className="mt-5 rounded-2xl bg-white/60 border border-white/70 px-3.5 py-2.5 shadow-sm backdrop-blur-sm">
