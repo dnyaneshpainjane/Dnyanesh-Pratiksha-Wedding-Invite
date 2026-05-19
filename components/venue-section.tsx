@@ -54,7 +54,7 @@ export function VenueSection() {
           <div className="inline-flex items-center gap-2.5 rounded-full border border-[#b76e79]/15 bg-white/70 px-5 py-2.5 shadow-sm shadow-[#b76e79]/10 backdrop-blur-md">
             <MapPin className="w-4 h-4 text-[#b76e79]" />
             <span className="text-sm md:text-base text-[#3f3434] font-sans font-semibold">
-              Kotamgoan, Yeola, Nashik - 423401
+              Yeola, Nashik - 423401
             </span>
           </div>
         </div>
