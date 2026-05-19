@@ -2,6 +2,12 @@
 
 import { CountdownTimer } from './countdown-timer'
 import { ButterflyAnimation } from './butterfly-animation'
+import { Pinyon_Script } from 'next/font/google'
+
+const pinyon = Pinyon_Script({
+  subsets: ['latin'],
+  weight: '400',
+})
 
 export function HeroSection() {
   return (
@@ -47,18 +53,24 @@ export function HeroSection() {
             />
           </div>
 
-          {/* Main heading */}
+          {/* Names */}
           <div className="space-y-4 md:space-y-5 animate-slide-up">
             <div className="mb-3">
-              <span className="block font-script text-6xl leading-[1.05] text-[#8f4e58] drop-shadow-sm md:text-7xl lg:text-8xl">
+              <span
+                className={`${pinyon.className} block text-7xl leading-[0.95] text-[#382457] drop-shadow-sm md:text-8xl lg:text-[8.5rem]`}
+              >
                 Dnyanesh
               </span>
 
-              <span className="block font-script text-4xl leading-none text-[#B76E79] md:text-5xl lg:text-6xl">
+              <span
+                className={`${pinyon.className} block my-1 text-4xl leading-none text-[#8a8178] md:my-2 md:text-5xl lg:text-6xl`}
+              >
                 &
               </span>
 
-              <span className="block font-script text-6xl leading-[1.05] text-[#8f4e58] drop-shadow-sm md:text-7xl lg:text-8xl">
+              <span
+                className={`${pinyon.className} block text-7xl leading-[0.95] text-[#382457] drop-shadow-sm md:text-8xl lg:text-[8.5rem]`}
+              >
                 Pratiksha
               </span>
             </div>
@@ -74,7 +86,7 @@ export function HeroSection() {
             </div>
           </div>
 
-          {/* Animated divider */}
+          {/* Divider */}
           <div className="flex items-center justify-center gap-3 py-1 opacity-50">
             <div className="h-px w-8 bg-gradient-to-r from-transparent to-primary" />
 
