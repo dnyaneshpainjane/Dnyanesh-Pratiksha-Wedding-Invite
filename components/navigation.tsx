@@ -16,16 +16,17 @@ export function Navigation() {
   ]
 
   return (
-    <nav className="sticky top-0 z-40 bg-gradient-to-r from-[#3D2F3A] via-[#4A3A47] to-[#3D2F3A] backdrop-blur border-b border-[#B76E79]/30 shadow-lg">
+    <nav className="sticky top-0 z-40 bg-gradient-to-r from-[#3D2F3A] via-[#4A3A47] to-[#3D2F3A] backdrop-blur border-b border-[#B76E79]/30 shadow-md">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center h-20">
-          {/* Logo with styling */}
+        {/* Reduced height: h-20 → h-16 */}
+        <div className="flex justify-between items-center h-16">
+          {/* Logo */}
           <div className="flex-shrink-0">
             <a href="#" className="flex flex-col items-center">
-              <span className="font-serif text-3xl font-light text-transparent bg-clip-text bg-gradient-to-r from-[#E6D7BE] to-[#B76E79]">
+              <span className="font-serif text-2xl font-light text-transparent bg-clip-text bg-gradient-to-r from-[#E6D7BE] to-[#B76E79]">
                 D & P
               </span>
-              <div className="h-0.5 w-8 bg-gradient-to-r from-[#E6D7BE] to-[#B76E79]" />
+              <div className="h-px w-7 bg-gradient-to-r from-[#E6D7BE] to-[#B76E79]" />
             </a>
           </div>
 
@@ -35,38 +36,41 @@ export function Navigation() {
               <div key={item.label} className="flex items-center">
                 <a
                   href={item.href}
-                  className="px-6 py-3 text-[#E6D7BE] hover:text-white hover:bg-[#B76E79]/20 transition-all duration-300 text-sm tracking-widest font-light rounded-lg relative group"
+                  className="px-5 py-2 text-[#E6D7BE] hover:text-white hover:bg-[#B76E79]/20 transition-all duration-300 text-xs tracking-widest font-light rounded-lg relative group"
                 >
                   {item.label}
                   <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-[#B76E79] to-[#E6D7BE] group-hover:w-full transition-all duration-300 rounded-full" />
                 </a>
+
                 {index < navItems.length - 1 && (
-                  <div className="w-px h-4 bg-[#B76E79]/30" />
+                  <div className="w-px h-3.5 bg-[#B76E79]/30" />
                 )}
               </div>
             ))}
           </div>
 
           {/* Audio Player + Mobile Menu Button */}
-          <div className="flex items-center gap-4">
+          <div className="flex items-center gap-3">
             <AudioPlayer />
+
             <button
               onClick={() => setIsOpen(!isOpen)}
-              className="md:hidden p-2 rounded-lg hover:bg-[#B76E79]/20 text-[#E6D7BE] transition-colors"
+              className="md:hidden p-1.5 rounded-lg hover:bg-[#B76E79]/20 text-[#E6D7BE] transition-colors"
+              aria-label="Toggle navigation menu"
             >
-              {isOpen ? <X size={24} /> : <Menu size={24} />}
+              {isOpen ? <X size={21} /> : <Menu size={21} />}
             </button>
           </div>
         </div>
 
         {/* Mobile Navigation */}
         {isOpen && (
-          <div className="md:hidden pb-6 space-y-2 border-t border-[#B76E79]/20 pt-6">
+          <div className="md:hidden pb-4 space-y-1.5 border-t border-[#B76E79]/20 pt-4">
             {navItems.map((item) => (
               <a
                 key={item.label}
                 href={item.href}
-                className="block px-6 py-3 text-[#E6D7BE] hover:text-white hover:bg-[#B76E79]/20 rounded-lg transition-all duration-300 text-sm tracking-wide font-light"
+                className="block px-5 py-2.5 text-[#E6D7BE] hover:text-white hover:bg-[#B76E79]/20 rounded-lg transition-all duration-300 text-xs tracking-wide font-light"
                 onClick={() => setIsOpen(false)}
               >
                 {item.label}
