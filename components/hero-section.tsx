@@ -87,18 +87,10 @@ export function HeroSection() {
           </div>
 
           {/* Divider */}
-          <div className="flex items-center justify-center gap-3 py-1 opacity-50">
-            <div className="h-px w-8 bg-gradient-to-r from-transparent to-primary" />
-
-            <svg
-              className="h-4 w-4 text-primary animate-bounce"
-              viewBox="0 0 24 24"
-              fill="currentColor"
-            >
-              <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
-            </svg>
-
-            <div className="h-px w-8 bg-gradient-to-l from-transparent to-primary" />
+          <div className="flex items-center justify-center py-1 opacity-90">
+            <span className="text-2xl md:text-3xl text-[#B22234] drop-shadow-sm">
+              ♥
+            </span>
           </div>
 
           {/* Subheading */}
