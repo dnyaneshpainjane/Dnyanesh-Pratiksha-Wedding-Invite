@@ -15,10 +15,10 @@ export function HeroSection() {
         style={{ backgroundImage: 'url(/hero-background.jpg)' }}
       />
 
-      {/* Soft overlay */}
+      {/* Elegant overlay */}
       <div className="absolute inset-0 bg-gradient-to-b from-[#FFF8F5]/85 via-[#FFF8F5]/90 to-[#FFF8F5]/95" />
 
-      {/* Background glow */}
+      {/* Animated gradient accents */}
       <div className="absolute inset-0 overflow-hidden">
         <div className="absolute top-0 left-1/4 h-72 w-72 rounded-full bg-[#B76E79]/10 blur-3xl md:h-96 md:w-96 animate-pulse" />
         <div
@@ -31,9 +31,12 @@ export function HeroSection() {
 
       <div className="relative z-10 mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
         <div className="space-y-6 text-center md:space-y-8">
-          {/* Decorative dots */}
+          {/* Decorative opening */}
           <div className="flex justify-center gap-3 opacity-60 animate-fade-in">
-            <div className="h-1.5 w-1.5 rounded-full bg-primary animate-bounce" />
+            <div
+              className="h-1.5 w-1.5 rounded-full bg-primary animate-bounce"
+              style={{ animationDelay: '0s' }}
+            />
             <div
               className="h-1.5 w-1.5 rounded-full bg-secondary animate-bounce"
               style={{ animationDelay: '0.2s' }}
@@ -44,25 +47,21 @@ export function HeroSection() {
             />
           </div>
 
-          {/* Names */}
+          {/* Main heading */}
           <div className="space-y-4 md:space-y-5 animate-slide-up">
-            <h1 className="text-[#8f4e58] drop-shadow-sm">
-              <span className="block font-brachetto text-5xl font-normal leading-none tracking-wide md:text-6xl lg:text-7xl">
+            <div className="mb-3">
+              <span className="block font-script text-6xl leading-[1.05] text-[#8f4e58] drop-shadow-sm md:text-7xl lg:text-8xl">
                 Dnyanesh
               </span>
 
-              <span className="my-1 flex items-center justify-center gap-3 md:my-2 md:gap-4">
-                <span className="h-px w-10 bg-gradient-to-r from-transparent to-[#B76E79]/60 md:w-16" />
-                <span className="font-brachetto text-3xl font-normal leading-none text-[#B76E79] md:text-4xl lg:text-5xl">
-                  &
-                </span>
-                <span className="h-px w-10 bg-gradient-to-l from-transparent to-[#B76E79]/60 md:w-16" />
+              <span className="block font-script text-4xl leading-none text-[#B76E79] md:text-5xl lg:text-6xl">
+                &
               </span>
 
-              <span className="block font-brachetto text-5xl font-normal leading-none tracking-wide md:text-6xl lg:text-7xl">
+              <span className="block font-script text-6xl leading-[1.05] text-[#8f4e58] drop-shadow-sm md:text-7xl lg:text-8xl">
                 Pratiksha
               </span>
-            </h1>
+            </div>
 
             <div className="space-y-1.5 md:space-y-2">
               <p className="text-center text-xs font-medium uppercase tracking-[0.32em] text-[#B76E79] md:text-sm">
@@ -75,7 +74,7 @@ export function HeroSection() {
             </div>
           </div>
 
-          {/* Divider */}
+          {/* Animated divider */}
           <div className="flex items-center justify-center gap-3 py-1 opacity-50">
             <div className="h-px w-8 bg-gradient-to-r from-transparent to-primary" />
 
@@ -90,14 +89,14 @@ export function HeroSection() {
             <div className="h-px w-8 bg-gradient-to-l from-transparent to-primary" />
           </div>
 
-          {/* Description */}
+          {/* Subheading */}
           <p className="mx-auto max-w-3xl text-sm font-light leading-relaxed text-foreground/70 md:text-base animate-fade-in">
             Together with our families, we joyfully invite you to celebrate our wedding as we unite
             in love and commitment. Join us for a memorable celebration of life, culture, and
             happiness that will be etched in our hearts forever.
           </p>
 
-          {/* Countdown */}
+          {/* Countdown Timer */}
           <div
             className="mt-8 md:mt-10 animate-fade-in-up"
             style={{ animationDelay: '200ms' }}
@@ -105,7 +104,7 @@ export function HeroSection() {
             <CountdownTimer />
           </div>
 
-          {/* CTA */}
+          {/* CTA Button */}
           <div className="pt-2 animate-bounce-slow">
             <a
               href="#events"
@@ -124,7 +123,7 @@ export function HeroSection() {
             </a>
           </div>
 
-          {/* Bottom line */}
+          {/* Decorative bottom line */}
           <div className="flex items-center justify-center gap-4 pt-5 opacity-40">
             <div className="h-px w-12 bg-gradient-to-r from-transparent via-primary to-transparent" />
           </div>
