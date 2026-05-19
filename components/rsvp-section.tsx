@@ -24,7 +24,7 @@ const familyDetails = [
       },
       {
         label: 'Grandparents',
-        value: '[Names]',
+        value: 'Shri Gangadhar & Smt. Chandrakala Satpute',
       },
       {
         label: 'Siblings',
