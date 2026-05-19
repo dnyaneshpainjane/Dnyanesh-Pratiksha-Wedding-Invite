@@ -82,22 +82,22 @@ export function Footer() {
           <div className="border-t border-b border-[#B76E79]/20 py-8 mb-8">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 text-center">
               <a
-                href="mailto:dnyanesh.pratiksha@wedding.com"
-                className="flex items-center justify-center gap-3 text-[#4A4A4A] font-light hover:text-[#B76E79] transition-colors group"
-              >
-                <div className="p-2 bg-[#F4C2C2]/30 rounded-full group-hover:bg-[#F4C2C2]/50 transition-colors">
-                  <Mail size={18} className="text-[#B76E79]" />
-                </div>
-                <span className="text-sm">dnyanesh.pratiksha@wedding.com</span>
-              </a>
-              <a
-                href="tel:+15551234567"
+                href="tel:+919834228332"
                 className="flex items-center justify-center gap-3 text-[#4A4A4A] font-light hover:text-[#B76E79] transition-colors group"
               >
                 <div className="p-2 bg-[#E6D7BE]/30 rounded-full group-hover:bg-[#E6D7BE]/50 transition-colors">
                   <Phone size={18} className="text-[#B76E79]" />
                 </div>
                 <span className="text-sm">+91 98342 28332</span>
+              </a>
+              <a
+                href="tel:+919422259264"
+                className="flex items-center justify-center gap-3 text-[#4A4A4A] font-light hover:text-[#B76E79] transition-colors group"
+              >
+                <div className="p-2 bg-[#E6D7BE]/30 rounded-full group-hover:bg-[#E6D7BE]/50 transition-colors">
+                  <Phone size={18} className="text-[#B76E79]" />
+                </div>
+                <span className="text-sm">+91 94222 59264</span>
               </a>
             </div>
           </div>
