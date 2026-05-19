@@ -72,70 +72,70 @@ export function EventDetails() {
     <section
       id="details"
       ref={sectionRef}
-      className="relative overflow-hidden py-14 md:py-20 px-5 bg-[radial-gradient(circle_at_top,#fff8f5_0%,#fffaf8_42%,#f8ebe6_100%)]"
+      className="relative overflow-hidden py-16 md:py-24 px-5 bg-[radial-gradient(circle_at_top,#fff8f5_0%,#fffaf8_42%,#f8ebe6_100%)]"
     >
       {/* Background decorations */}
       <div className="pointer-events-none absolute inset-0 overflow-hidden">
-        <div className="absolute -top-20 -left-20 h-48 w-48 rounded-full bg-[#f4c2c2]/25 blur-3xl animate-float" />
-        <div className="absolute top-36 -right-24 h-56 w-56 rounded-full bg-[#e6d7be]/30 blur-3xl animate-float-delayed" />
-        <div className="absolute bottom-10 left-1/2 h-48 w-48 -translate-x-1/2 rounded-full bg-[#b76e79]/10 blur-3xl animate-pulse-soft" />
+        <div className="absolute -top-20 -left-20 h-56 w-56 rounded-full bg-[#f4c2c2]/25 blur-3xl animate-float" />
+        <div className="absolute top-36 -right-24 h-64 w-64 rounded-full bg-[#e6d7be]/30 blur-3xl animate-float-delayed" />
+        <div className="absolute bottom-10 left-1/2 h-56 w-56 -translate-x-1/2 rounded-full bg-[#b76e79]/10 blur-3xl animate-pulse-soft" />
 
-        <span className="absolute left-[8%] top-[18%] text-xl text-[#b76e79]/20 animate-twinkle">
+        <span className="absolute left-[8%] top-[18%] text-2xl text-[#b76e79]/20 animate-twinkle">
           ✦
         </span>
-        <span className="absolute right-[10%] top-[26%] text-2xl text-[#b76e79]/15 animate-orbit">
+        <span className="absolute right-[10%] top-[26%] text-3xl text-[#b76e79]/15 animate-orbit">
           ✧
         </span>
-        <span className="absolute left-[14%] bottom-[18%] text-xl text-[#c9a34e]/25 animate-twinkle">
+        <span className="absolute left-[14%] bottom-[18%] text-2xl text-[#c9a34e]/25 animate-twinkle">
           ❀
         </span>
       </div>
 
-      <div className="relative z-10 max-w-4xl mx-auto">
+      <div className="relative z-10 max-w-5xl mx-auto">
         {/* Heading */}
         <div
           className={`text-center transition-all duration-1000 ${
             isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
           }`}
         >
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 mb-3 rounded-full border border-[#b76e79]/20 bg-white/60 shadow-sm shadow-[#b76e79]/10 backdrop-blur-md">
-            <Sparkles className="w-3 h-3 text-[#b76e79]" />
-            <p className="text-[10px] tracking-[0.24em] uppercase text-[#b76e79] font-sans font-light">
+          <div className="inline-flex items-center gap-2 px-4 py-1.5 mb-4 rounded-full border border-[#b76e79]/20 bg-white/60 shadow-sm shadow-[#b76e79]/10 backdrop-blur-md">
+            <Sparkles className="w-3.5 h-3.5 text-[#b76e79]" />
+            <p className="text-[11px] tracking-[0.25em] uppercase text-[#b76e79] font-sans font-light">
               When & Where
             </p>
-            <Sparkles className="w-3 h-3 text-[#b76e79]" />
+            <Sparkles className="w-3.5 h-3.5 text-[#b76e79]" />
           </div>
 
-          <h2 className="font-serif text-3xl md:text-4xl lg:text-5xl font-light text-[#8f4e58] mb-3 text-balance">
+          <h2 className="font-serif text-4xl md:text-5xl lg:text-6xl font-light text-[#8f4e58] mb-4 text-balance">
             Event Details
           </h2>
 
-          <p className="max-w-lg mx-auto text-[#4a4a4a]/60 font-sans font-light leading-6 text-xs md:text-sm">
+          <p className="max-w-xl mx-auto text-[#4a4a4a]/60 font-sans font-light leading-7 text-sm md:text-base">
             Join us for two unforgettable days filled with rituals, music,
             blessings, laughter, and love.
           </p>
 
-          <div className="relative w-16 h-px bg-[#b76e79]/30 mx-auto mt-6 mb-9">
-            <div className="absolute left-1/2 top-1/2 h-2 w-2 -translate-x-1/2 -translate-y-1/2 rotate-45 bg-[#b76e79]/60" />
+          <div className="relative w-20 h-px bg-[#b76e79]/30 mx-auto mt-7 mb-10">
+            <div className="absolute left-1/2 top-1/2 h-2.5 w-2.5 -translate-x-1/2 -translate-y-1/2 rotate-45 bg-[#b76e79]/60" />
           </div>
         </div>
 
         {/* Shared location */}
         <div
-          className={`mb-6 flex justify-center transition-all duration-1000 delay-150 ${
+          className={`mb-7 flex justify-center transition-all duration-1000 delay-150 ${
             isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"
           }`}
         >
-          <div className="inline-flex items-center gap-2 rounded-full border border-[#b76e79]/15 bg-white/65 px-4 py-2 shadow-sm shadow-[#b76e79]/10 backdrop-blur-md">
-            <MapPin className="w-3.5 h-3.5 text-[#b76e79]" />
-            <span className="text-xs md:text-sm text-[#4a4a4a]/70 font-sans font-light">
+          <div className="inline-flex items-center gap-2.5 rounded-full border border-[#b76e79]/15 bg-white/65 px-5 py-2.5 shadow-sm shadow-[#b76e79]/10 backdrop-blur-md">
+            <MapPin className="w-4 h-4 text-[#b76e79]" />
+            <span className="text-sm md:text-base text-[#4a4a4a]/70 font-sans font-light">
               Jagdamba Lawns, Yeola
             </span>
           </div>
         </div>
 
         {/* Cards */}
-        <div className="grid md:grid-cols-2 gap-4 lg:gap-5">
+        <div className="grid md:grid-cols-2 gap-5 lg:gap-6">
           {events.map((event, index) => (
             <div
               key={event.title}
@@ -147,51 +147,51 @@ export function EventDetails() {
               style={{ transitionDelay: `${150 + index * 100}ms` }}
             >
               <div
-                className={`relative h-full overflow-hidden rounded-2xl border border-white/70 bg-gradient-to-br ${event.gradient} p-[1px] shadow-md shadow-[#b76e79]/10 transition-all duration-500 hover:-translate-y-1 hover:shadow-lg hover:shadow-[#b76e79]/20`}
+                className={`relative h-full overflow-hidden rounded-3xl border border-white/70 bg-gradient-to-br ${event.gradient} p-[1px] shadow-md shadow-[#b76e79]/10 transition-all duration-500 hover:-translate-y-1.5 hover:shadow-xl hover:shadow-[#b76e79]/20`}
               >
                 <div className="absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-white/35 to-transparent transition-transform duration-1000 group-hover:translate-x-full" />
 
-                <div className="relative h-full rounded-[calc(1rem-1px)] bg-white/58 p-4 md:p-5 backdrop-blur-xl">
-                  <div className="absolute -right-2 -top-4 text-5xl opacity-10 transition-all duration-700 group-hover:scale-110 group-hover:rotate-12">
+                <div className="relative h-full rounded-[calc(1.5rem-1px)] bg-white/58 p-5 md:p-6 backdrop-blur-xl">
+                  <div className="absolute -right-3 -top-5 text-6xl opacity-10 transition-all duration-700 group-hover:scale-110 group-hover:rotate-12">
                     {event.emoji}
                   </div>
 
-                  <div className="flex items-center gap-3 mb-4">
+                  <div className="flex items-center gap-3.5 mb-5">
                     <div className="relative">
                       <div className="absolute inset-0 rounded-full bg-[#b76e79]/20 blur-md transition-all duration-500 group-hover:scale-125" />
-                      <div className="relative w-10 h-10 rounded-full bg-white/75 border border-white shadow-sm flex items-center justify-center transition-all duration-500 group-hover:rotate-6 group-hover:scale-105">
-                        <event.icon className="w-4.5 h-4.5 text-[#b76e79]" />
+                      <div className="relative w-11 h-11 rounded-full bg-white/75 border border-white shadow-sm flex items-center justify-center transition-all duration-500 group-hover:rotate-6 group-hover:scale-105">
+                        <event.icon className="w-5 h-5 text-[#b76e79]" />
                       </div>
                     </div>
 
                     <div>
-                      <p className="text-[9px] tracking-[0.2em] uppercase text-[#b76e79]/70 font-sans font-light mb-0.5">
+                      <p className="text-[10px] tracking-[0.22em] uppercase text-[#b76e79]/70 font-sans font-light mb-0.5">
                         Celebration {String(index + 1).padStart(2, "0")}
                       </p>
-                      <h3 className="font-serif text-lg md:text-xl font-light text-[#3f3434]">
+                      <h3 className="font-serif text-xl md:text-2xl font-light text-[#3f3434]">
                         {event.title}
                       </h3>
                     </div>
                   </div>
 
-                  <div className="grid grid-cols-2 gap-2 mb-4">
+                  <div className="grid grid-cols-2 gap-2.5 mb-5">
                     <InfoRow
-                      icon={<Calendar className="w-3.5 h-3.5" />}
+                      icon={<Calendar className="w-4 h-4" />}
                       label={event.date}
                     />
                     <InfoRow
-                      icon={<Clock className="w-3.5 h-3.5" />}
+                      icon={<Clock className="w-4 h-4" />}
                       label={event.time}
                     />
                   </div>
 
-                  <p className="text-[#4a4a4a]/70 font-sans font-light leading-5 text-xs md:text-sm text-pretty">
+                  <p className="text-[#4a4a4a]/70 font-sans font-light leading-6 text-sm md:text-[15px] text-pretty">
                     {event.description}
                   </p>
 
-                  <div className="mt-4 flex items-center gap-2">
+                  <div className="mt-5 flex items-center gap-2.5">
                     <div className="h-px flex-1 bg-gradient-to-r from-transparent via-[#b76e79]/25 to-[#b76e79]/10" />
-                    <Heart className="w-3 h-3 text-[#b76e79]/50 fill-[#b76e79]/20" />
+                    <Heart className="w-3.5 h-3.5 text-[#b76e79]/50 fill-[#b76e79]/20" />
                     <div className="h-px flex-1 bg-gradient-to-r from-[#b76e79]/10 via-[#b76e79]/25 to-transparent" />
                   </div>
                 </div>
@@ -202,13 +202,13 @@ export function EventDetails() {
 
         {/* Bottom message */}
         <div
-          className={`mt-9 text-center transition-all duration-1000 delay-700 ${
+          className={`mt-10 text-center transition-all duration-1000 delay-700 ${
             isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-7"
           }`}
         >
-          <div className="inline-flex flex-col sm:flex-row items-center gap-2 px-4 py-2.5 rounded-full border border-[#b76e79]/15 bg-white/60 shadow-sm shadow-[#b76e79]/10 backdrop-blur-md">
-            <Heart className="w-3.5 h-3.5 text-[#b76e79] fill-[#b76e79]/20" />
-            <span className="text-xs text-[#4a4a4a]/70 font-sans font-light">
+          <div className="inline-flex flex-col sm:flex-row items-center gap-2.5 px-5 py-3 rounded-full border border-[#b76e79]/15 bg-white/60 shadow-sm shadow-[#b76e79]/10 backdrop-blur-md">
+            <Heart className="w-4 h-4 text-[#b76e79] fill-[#b76e79]/20" />
+            <span className="text-sm text-[#4a4a4a]/70 font-sans font-light">
               Your presence will make our celebration even more special.
             </span>
           </div>
@@ -226,11 +226,11 @@ function InfoRow({
   label: string
 }) {
   return (
-    <div className="flex items-center gap-2 rounded-xl bg-white/55 border border-white/70 px-3 py-2 shadow-sm backdrop-blur-sm transition-all duration-300 hover:bg-white/80 hover:translate-x-0.5">
-      <span className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-[#b76e79]/10 text-[#b76e79]">
+    <div className="flex items-center gap-2.5 rounded-2xl bg-white/55 border border-white/70 px-3.5 py-2.5 shadow-sm backdrop-blur-sm transition-all duration-300 hover:bg-white/80 hover:translate-x-0.5">
+      <span className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-[#b76e79]/10 text-[#b76e79]">
         {icon}
       </span>
-      <span className="text-[#3f3434] font-sans text-xs md:text-sm">
+      <span className="text-[#3f3434] font-sans text-sm md:text-[15px]">
         {label}
       </span>
     </div>
