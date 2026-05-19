@@ -132,7 +132,7 @@ export function Footer() {
               href="#rsvp"
               className="text-sm font-light text-[#B76E79] hover:text-primary transition-colors relative group"
             >
-              RSVP
+              Family
               <div className="absolute bottom-0 left-0 h-px w-0 bg-[#B76E79] group-hover:w-full transition-all duration-300" />
             </a>
           </div>
