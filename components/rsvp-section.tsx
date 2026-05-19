@@ -28,7 +28,7 @@ const familyDetails = [
       },
       {
         label: 'Siblings',
-        value: 'Priyanka, Nilima, Neha, Deepika, Prathmesh',
+        value: 'Priyanka, Nilima, Neha, Kavita, Deepika, Prathmesh',
       },
       {
         label: 'Family Love',
