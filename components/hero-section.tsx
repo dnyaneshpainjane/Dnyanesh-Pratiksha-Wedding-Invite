@@ -86,11 +86,22 @@ export function HeroSection() {
             </div>
           </div>
 
-          {/* Divider */}
-          <div className="flex items-center justify-center py-1 opacity-90">
-            <span className="text-2xl md:text-3xl text-[#B22234] drop-shadow-sm">
-              ♥
-            </span>
+          {/* Heart divider */}
+          <div className="flex items-center justify-center gap-3 py-1 opacity-70">
+            <div className="h-px w-10 bg-gradient-to-r from-transparent to-[#B76E79]/60" />
+          
+            <div className="relative flex h-8 w-8 items-center justify-center">
+              <div className="absolute inset-0 rounded-full bg-[#B76E79]/10 blur-md" />
+              <svg
+                className="relative h-4.5 w-4.5 text-[#B76E79] animate-bounce"
+                viewBox="0 0 24 24"
+                fill="currentColor"
+              >
+                <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.08C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" />
+              </svg>
+            </div>
+          
+            <div className="h-px w-10 bg-gradient-to-l from-transparent to-[#B76E79]/60" />
           </div>
 
           {/* Subheading */}
