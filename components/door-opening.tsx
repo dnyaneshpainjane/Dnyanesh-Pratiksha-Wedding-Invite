@@ -43,71 +43,73 @@ export function DoorOpening({
   if (hideIntro) return null
 
   return (
-    <div className="fixed inset-0 z-50 overflow-hidden bg-[#d9bf72]">
-      {/* Revealed invitation behind the door */}
+    <div className="fixed inset-0 z-50 overflow-hidden bg-[#d5ad49]">
+      {/* Revealed small wedding card */}
       <div
-        className={`absolute inset-0 z-0 flex items-center justify-center overflow-hidden bg-[#fbf4e6] transition-all duration-[2200ms] ease-[cubic-bezier(.19,1,.22,1)] ${
+        className={`absolute inset-0 z-0 flex items-center justify-center overflow-hidden bg-[#f6e7bd] transition-all duration-[2200ms] ease-[cubic-bezier(.19,1,.22,1)] ${
           showReveal ? 'scale-100 opacity-100' : 'scale-110 opacity-0'
         }`}
       >
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(255,255,255,.95)_0%,rgba(251,244,230,.96)_38%,rgba(232,207,148,.78)_100%)]" />
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(255,248,224,.96)_0%,rgba(239,209,133,.82)_52%,rgba(165,118,35,.72)_100%)]" />
 
-        <div className="absolute inset-0 opacity-[0.09] bg-[radial-gradient(circle,#8c6a2e_1px,transparent_1.5px)] bg-[size:20px_20px]" />
+        <div className="absolute inset-0 opacity-[0.12] bg-[radial-gradient(circle,#7f5719_1px,transparent_1.5px)] bg-[size:22px_22px]" />
 
-        {/* Floral reveal corners */}
-        <div className="absolute -left-20 -top-16 h-80 w-80 rounded-full bg-[radial-gradient(circle_at_42%_42%,rgba(190,121,78,.5)_0%,transparent_17%),radial-gradient(circle_at_60%_58%,rgba(225,185,123,.55)_0%,transparent_16%),radial-gradient(circle_at_36%_66%,rgba(113,124,70,.35)_0%,transparent_14%)] blur-[0.3px]" />
-        <div className="absolute -bottom-20 -right-20 h-96 w-96 rounded-full bg-[radial-gradient(circle_at_44%_40%,rgba(190,121,78,.42)_0%,transparent_16%),radial-gradient(circle_at_62%_58%,rgba(225,185,123,.5)_0%,transparent_15%),radial-gradient(circle_at_32%_68%,rgba(113,124,70,.32)_0%,transparent_13%)] blur-[0.3px]" />
+        {/* Soft gold floral corners behind card */}
+        <div className="absolute left-4 top-4 h-52 w-52 opacity-45 sm:h-72 sm:w-72">
+          <GoldFlower />
+        </div>
 
-        <div className="relative mx-5 w-full max-w-4xl rounded-[2.2rem] border border-[#d8bd78]/60 bg-white/55 px-6 py-12 text-center shadow-[0_28px_90px_rgba(95,69,28,.22)] backdrop-blur-md sm:px-10 md:px-16 md:py-16">
-          <div className="absolute inset-3 rounded-[1.7rem] border border-[#d2af61]/45" />
+        <div className="absolute bottom-4 right-4 h-52 w-52 rotate-180 opacity-45 sm:h-72 sm:w-72">
+          <GoldFlower />
+        </div>
 
-          <p className="relative mb-5 text-xs uppercase tracking-[0.46em] text-[#9b742c]">
+        <div className="relative mx-5 w-[88vw] max-w-[520px] rounded-[1.8rem] border border-[#d6ad55]/70 bg-[#fff7dc]/82 px-6 py-9 text-center shadow-[0_28px_80px_rgba(88,59,15,.28)] backdrop-blur-md sm:px-10 sm:py-11">
+          <div className="absolute inset-3 rounded-[1.35rem] border border-[#d0a349]/45" />
+
+          <div className="relative mx-auto mb-5 flex h-16 w-16 items-center justify-center rounded-full border border-[#be8f2d]/60 bg-[radial-gradient(circle_at_34%_24%,#fff1b8,#c99634_55%,#704815)] shadow-[inset_3px_4px_8px_rgba(255,240,179,.48),inset_-5px_-6px_10px_rgba(72,42,9,.38)]">
+            <span className="font-serif text-xl text-[#fff1bd] drop-shadow">
+              D&P
+            </span>
+          </div>
+
+          <p className="relative mb-4 text-[10px] uppercase tracking-[0.38em] text-[#9b7024]">
             Wedding Invitation
           </p>
 
-          <div className="relative mx-auto mb-8 flex max-w-xl items-center gap-4">
-            <div className="h-px flex-1 bg-gradient-to-r from-transparent via-[#b88a36] to-[#b88a36]" />
-            <div className="h-3 w-3 rotate-45 border border-[#b88a36] bg-[#f8e9c1]" />
-            <div className="h-px flex-1 bg-gradient-to-l from-transparent via-[#b88a36] to-[#b88a36]" />
+          <div className="relative mx-auto mb-6 flex max-w-xs items-center gap-3">
+            <div className="h-px flex-1 bg-gradient-to-r from-transparent via-[#b3832c] to-[#b3832c]" />
+            <div className="h-2 w-2 rotate-45 bg-[#b3832c]" />
+            <div className="h-px flex-1 bg-gradient-to-l from-transparent via-[#b3832c] to-[#b3832c]" />
           </div>
 
-          <h1 className="relative font-serif text-5xl font-light leading-tight text-[#4a3517] sm:text-7xl md:text-8xl">
+          <h1 className="relative font-serif text-4xl font-light leading-tight text-[#4b3314] sm:text-5xl">
             Dnyanesh
-            <span className="block py-2 text-4xl italic text-[#b88a36] md:text-5xl">
+            <span className="block py-1 text-3xl italic text-[#b3832c]">
               &
             </span>
             Pratiksha
           </h1>
 
-          <p className="relative mx-auto mt-8 max-w-2xl text-base leading-8 text-[#695536] md:text-lg">
-            With love, joy, and blessings from our families, we invite you to
-            celebrate the beginning of our forever.
+          <p className="relative mx-auto mt-6 max-w-sm text-sm leading-7 text-[#6d562d]">
+            With love, joy, and blessings, we invite you to celebrate the
+            beginning of our forever.
           </p>
 
-          <div className="relative mx-auto mt-10 grid max-w-2xl gap-4 sm:grid-cols-3">
-            <div className="rounded-2xl border border-[#dec489]/70 bg-[#fff9ea]/70 px-5 py-4 shadow-sm">
-              <p className="text-[10px] uppercase tracking-[0.28em] text-[#9b742c]">
-                Celebrate
-              </p>
-              <p className="mt-1 font-serif text-2xl text-[#4a3517]">
+          <div className="relative mx-auto mt-7 grid max-w-sm grid-cols-3 gap-2">
+            <div className="rounded-xl border border-[#dec17a]/70 bg-[#fff9e8]/70 px-3 py-3">
+              <p className="text-[9px] uppercase tracking-[0.2em] text-[#9b7024]">
                 Love
               </p>
             </div>
 
-            <div className="rounded-2xl border border-[#dec489]/70 bg-[#fff9ea]/70 px-5 py-4 shadow-sm">
-              <p className="text-[10px] uppercase tracking-[0.28em] text-[#9b742c]">
-                Together
-              </p>
-              <p className="mt-1 font-serif text-2xl text-[#4a3517]">
+            <div className="rounded-xl border border-[#dec17a]/70 bg-[#fff9e8]/70 px-3 py-3">
+              <p className="text-[9px] uppercase tracking-[0.2em] text-[#9b7024]">
                 Forever
               </p>
             </div>
 
-            <div className="rounded-2xl border border-[#dec489]/70 bg-[#fff9ea]/70 px-5 py-4 shadow-sm">
-              <p className="text-[10px] uppercase tracking-[0.28em] text-[#9b742c]">
-                With
-              </p>
-              <p className="mt-1 font-serif text-2xl text-[#4a3517]">
+            <div className="rounded-xl border border-[#dec17a]/70 bg-[#fff9e8]/70 px-3 py-3">
+              <p className="text-[9px] uppercase tracking-[0.2em] text-[#9b7024]">
                 Blessings
               </p>
             </div>
@@ -135,53 +137,40 @@ export function DoorOpening({
           <GoldDoorPanel side="right" />
         </div>
 
-        {/* Center vertical split shadow */}
+        {/* Center split */}
         <div
-          className={`absolute left-1/2 top-0 z-30 h-full w-[2px] -translate-x-1/2 bg-gradient-to-b from-transparent via-[#7b571e]/55 to-transparent transition-opacity duration-[1200ms] ${
+          className={`absolute left-1/2 top-0 z-30 h-full w-[2px] -translate-x-1/2 bg-gradient-to-b from-transparent via-[#6d4913]/60 to-transparent transition-opacity duration-[1200ms] ${
             isOpen ? 'opacity-0' : 'opacity-100'
           }`}
         />
 
-        {/* Right name plate */}
-        <div
-          className={`absolute left-[57%] top-1/2 z-40 -translate-y-1/2 transition-all duration-[1800ms] ease-[cubic-bezier(.19,1,.22,1)] ${
-            isOpen
-              ? 'translate-x-16 scale-75 opacity-0'
-              : 'translate-x-0 scale-100 opacity-100'
-          }`}
-        >
-          <div className="relative hidden sm:block">
-            <div className="absolute left-1/2 top-1/2 h-40 w-72 -translate-x-1/2 -translate-y-1/2 opacity-55">
-              <Ornament />
-            </div>
-
-            <div className="relative border border-[#f7d980] bg-[#fff4bd]/70 px-8 py-3 shadow-[0_8px_20px_rgba(87,59,18,.22),inset_0_1px_2px_rgba(255,255,255,.7)]">
-              <p className="font-serif text-lg uppercase tracking-[0.16em] text-[#9a6a17]">
-                D&P
-              </p>
-            </div>
-          </div>
-        </div>
-
-        {/* Left round emblem */}
+        {/* Center stamp only */}
         <button
           onClick={openDoor}
           disabled={isOpen}
           aria-label="Open wedding invitation"
-          className={`absolute left-[31%] top-1/2 z-50 flex h-40 w-40 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full transition-all duration-[1600ms] ease-[cubic-bezier(.19,1,.22,1)] sm:h-48 sm:w-48 ${
+          className={`absolute left-1/2 top-1/2 z-50 flex h-44 w-44 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full transition-all duration-[1600ms] ease-[cubic-bezier(.19,1,.22,1)] sm:h-52 sm:w-52 ${
             isOpen
-              ? '-translate-x-20 scale-60 rotate-12 opacity-0'
+              ? 'scale-50 rotate-12 opacity-0'
               : 'scale-100 rotate-0 opacity-100 hover:scale-[1.04] active:scale-95'
           }`}
         >
-          <span className="absolute inset-0 rounded-full border border-[#6e501b]/50 bg-[radial-gradient(circle_at_36%_28%,#ffeaa3_0%,#d9ae4f_34%,#9a6d21_68%,#513612_100%)] shadow-[0_22px_42px_rgba(66,45,13,.42),inset_4px_6px_12px_rgba(255,244,181,.52),inset_-8px_-12px_18px_rgba(65,39,8,.45)]" />
+          <span className="absolute inset-0 rounded-full border border-[#6e501b]/50 bg-[radial-gradient(circle_at_36%_28%,#ffeaa3_0%,#d9ae4f_34%,#9a6d21_68%,#513612_100%)] shadow-[0_24px_50px_rgba(66,45,13,.46),inset_5px_7px_14px_rgba(255,244,181,.55),inset_-9px_-13px_20px_rgba(65,39,8,.5)]" />
 
-          <span className="absolute inset-[10px] rounded-full border border-[#ffe9a6]/60" />
-          <span className="absolute inset-[20px] rounded-full border border-[#7b5619]/45 bg-[radial-gradient(circle,#c79837_0%,#83591a_100%)] shadow-[inset_0_4px_10px_rgba(48,29,8,.55)]" />
-          <span className="absolute inset-[34px] rounded-full border border-[#f7df93]/50" />
+          <span className="absolute inset-[8px] rounded-full border border-[#fff0b0]/70" />
+          <span className="absolute inset-[18px] rounded-full border border-[#735016]/50 bg-[radial-gradient(circle_at_35%_25%,#e4bd62,#90621e_58%,#4d310d_100%)] shadow-[inset_0_5px_12px_rgba(46,28,6,.58)]" />
+          <span className="absolute inset-[32px] rounded-full border border-[#f9df90]/55" />
 
-          <span className="relative font-serif text-4xl font-light text-[#ffeab0] drop-shadow-[0_2px_1px_rgba(45,28,7,.8)] sm:text-5xl">
-            D&P
+          <span className="absolute left-9 top-7 h-9 w-16 -rotate-12 rounded-full bg-white/20 blur-md" />
+
+          <span className="relative text-center font-serif text-[#ffeab0] drop-shadow-[0_2px_1px_rgba(45,28,7,.8)]">
+            <span className="block text-[11px] uppercase tracking-[0.28em]">
+              Dnyanesh
+            </span>
+            <span className="my-1 block text-2xl">&</span>
+            <span className="block text-[11px] uppercase tracking-[0.28em]">
+              Pratiksha
+            </span>
           </span>
         </button>
 
@@ -190,7 +179,7 @@ export function DoorOpening({
             isOpen ? 'translate-y-5 opacity-0' : 'translate-y-0 opacity-80'
           }`}
         >
-          Tap emblem to open
+          Tap stamp to open
         </p>
 
         <button
@@ -233,46 +222,65 @@ export function DoorOpening({
 
 function GoldDoorPanel({ side }: { side: 'left' | 'right' }) {
   return (
-    <div className="relative h-full w-full overflow-hidden bg-[#c59a34]">
-      {/* Gold base */}
-      <div className="absolute inset-0 bg-[linear-gradient(115deg,#8d641b_0%,#d9b452_22%,#f4df91_45%,#c39532_70%,#8a5d17_100%)]" />
+    <div className="relative h-full w-full overflow-hidden bg-[#c69a35]">
+      {/* Gold metallic base */}
+      <div className="absolute inset-0 bg-[linear-gradient(115deg,#8d641b_0%,#d8af4b_22%,#f5dd87_46%,#c2932e_72%,#805613_100%)]" />
 
-      {/* Embossed quilt pattern */}
-      <div className="absolute inset-0 opacity-[0.34] bg-[radial-gradient(ellipse_at_center,rgba(255,255,255,.75)_0%,rgba(255,255,255,.2)_28%,transparent_30%),radial-gradient(ellipse_at_center,rgba(86,52,8,.5)_0%,transparent_32%)] bg-[size:32px_24px] bg-[position:0_0,16px_12px]" />
+      {/* Embossed texture */}
+      <div className="absolute inset-0 opacity-[0.34] bg-[radial-gradient(ellipse_at_center,rgba(255,255,255,.7)_0%,rgba(255,255,255,.22)_28%,transparent_30%),radial-gradient(ellipse_at_center,rgba(86,52,8,.48)_0%,transparent_32%)] bg-[size:34px_26px] bg-[position:0_0,17px_13px]" />
 
-      {/* Fine metallic noise-like lines */}
-      <div className="absolute inset-0 opacity-[0.18] bg-[repeating-linear-gradient(90deg,rgba(255,255,255,.55)_0_1px,transparent_1px_7px),repeating-linear-gradient(0deg,rgba(82,48,8,.45)_0_1px,transparent_1px_9px)]" />
+      {/* Fine gold grain */}
+      <div className="absolute inset-0 opacity-[0.16] bg-[repeating-linear-gradient(90deg,rgba(255,255,255,.55)_0_1px,transparent_1px_8px),repeating-linear-gradient(0deg,rgba(82,48,8,.45)_0_1px,transparent_1px_10px)]" />
 
-      {/* Inner border */}
+      {/* Elegant inner border */}
       <div
         className={`absolute inset-y-7 ${
-          side === 'left' ? 'left-6 right-0 rounded-l-[2rem]' : 'left-0 right-6 rounded-r-[2rem]'
+          side === 'left'
+            ? 'left-6 right-0 rounded-l-[2rem]'
+            : 'left-0 right-6 rounded-r-[2rem]'
         } border-y border-[#ffe7a6]/55`}
       />
 
-      {/* Embossed floral artwork */}
+      {/* Corner flowers matching gold theme */}
       {side === 'left' ? (
         <>
-          <div className="absolute left-5 top-8 h-56 w-44 opacity-55">
+          <div className="absolute left-3 top-4 h-52 w-40 opacity-60 sm:left-6 sm:top-8 sm:h-64 sm:w-52">
             <GoldFlower />
           </div>
 
-          <div className="absolute bottom-[-40px] left-[-38px] h-72 w-72 rounded-full bg-[radial-gradient(circle_at_44%_42%,rgba(112,76,20,.35)_0%,transparent_16%),radial-gradient(circle_at_62%_58%,rgba(255,231,151,.35)_0%,transparent_15%),radial-gradient(circle_at_36%_64%,rgba(92,112,58,.18)_0%,transparent_13%)]" />
+          <div className="absolute bottom-5 left-2 h-44 w-36 -rotate-12 opacity-48 sm:bottom-8 sm:left-5 sm:h-56 sm:w-44">
+            <GoldFlower />
+          </div>
         </>
       ) : (
         <>
-          <div className="absolute bottom-12 right-4 h-56 w-44 rotate-180 opacity-55">
+          <div className="absolute right-3 top-4 h-52 w-40 scale-x-[-1] opacity-60 sm:right-6 sm:top-8 sm:h-64 sm:w-52">
             <GoldFlower />
           </div>
 
-          <div className="absolute right-[-35px] top-[-30px] h-72 w-72 rounded-full bg-[radial-gradient(circle_at_44%_42%,rgba(112,76,20,.32)_0%,transparent_16%),radial-gradient(circle_at_62%_58%,rgba(255,231,151,.32)_0%,transparent_15%),radial-gradient(circle_at_36%_64%,rgba(92,112,58,.16)_0%,transparent_13%)]" />
+          <div className="absolute bottom-5 right-2 h-44 w-36 rotate-[190deg] opacity-48 sm:bottom-8 sm:right-5 sm:h-56 sm:w-44">
+            <GoldFlower />
+          </div>
         </>
       )}
 
-      {/* Center glow */}
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(255,239,172,.42)_0%,transparent_58%)]" />
+      {/* Corner glow */}
+      <div
+        className={`absolute top-0 h-72 w-72 rounded-full bg-[#fff0a9]/16 blur-3xl ${
+          side === 'left' ? 'left-[-120px]' : 'right-[-120px]'
+        }`}
+      />
 
-      {/* Edge depth */}
+      <div
+        className={`absolute bottom-[-80px] h-72 w-72 rounded-full bg-[#7d5617]/18 blur-3xl ${
+          side === 'left' ? 'left-[-80px]' : 'right-[-80px]'
+        }`}
+      />
+
+      {/* Center glow */}
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(255,238,165,.36)_0%,transparent_58%)]" />
+
+      {/* Edge depth near opening */}
       <div
         className={`absolute top-0 h-full w-10 ${
           side === 'left'
@@ -289,55 +297,41 @@ function GoldFlower() {
     <svg viewBox="0 0 180 260" className="h-full w-full">
       <g
         fill="none"
-        stroke="#725118"
+        stroke="#6d4b13"
         strokeWidth="2"
         strokeLinecap="round"
         strokeLinejoin="round"
-        opacity="0.7"
+        opacity="0.74"
       >
-        <path d="M70 235 C72 180 84 130 116 70" />
-        <path d="M86 164 C55 145 38 124 26 96" />
-        <path d="M96 138 C124 120 139 94 150 58" />
-        <path d="M73 206 C48 196 30 178 18 150" />
-        <path d="M107 96 C86 73 79 52 83 24" />
+        <path d="M72 238 C74 178 86 126 116 66" />
+        <path d="M86 166 C56 146 38 124 27 94" />
+        <path d="M96 139 C126 121 140 92 151 57" />
+        <path d="M74 208 C48 197 30 177 18 148" />
+        <path d="M108 96 C88 73 80 52 84 24" />
 
-        <path d="M25 94 C44 82 62 85 76 105 C54 113 38 110 25 94Z" />
-        <path d="M146 58 C127 49 112 54 100 74 C119 83 135 78 146 58Z" />
-        <path d="M18 150 C39 140 56 147 66 169 C45 176 28 170 18 150Z" />
-        <path d="M83 24 C103 39 107 58 93 78 C76 62 72 43 83 24Z" />
+        <path d="M27 94 C45 82 64 85 78 106 C55 114 39 111 27 94Z" />
+        <path d="M151 57 C130 48 113 54 101 75 C121 84 138 78 151 57Z" />
+        <path d="M18 148 C40 140 58 147 68 170 C46 177 28 170 18 148Z" />
+        <path d="M84 24 C104 39 108 59 94 79 C77 62 73 43 84 24Z" />
+        <path d="M116 68 C138 63 158 74 165 96 C143 101 125 93 116 68Z" />
 
-        <path d="M115 72 C136 64 157 74 164 96 C142 101 124 94 115 72Z" />
+        <path d="M55 122 C42 104 43 90 58 78" />
+        <path d="M120 118 C139 108 151 94 156 76" />
+        <path d="M68 188 C50 180 39 168 34 154" />
       </g>
 
-      <g fill="#f7df92" opacity="0.38">
-        <circle cx="26" cy="96" r="8" />
-        <circle cx="146" cy="58" r="7" />
-        <circle cx="18" cy="150" r="7" />
-        <circle cx="83" cy="24" r="6" />
+      <g fill="#f9e59d" opacity="0.42">
+        <circle cx="27" cy="94" r="8" />
+        <circle cx="151" cy="57" r="7" />
+        <circle cx="18" cy="148" r="7" />
+        <circle cx="84" cy="24" r="6" />
+        <circle cx="165" cy="96" r="6" />
       </g>
-    </svg>
-  )
-}
 
-function Ornament() {
-  return (
-    <svg viewBox="0 0 320 180" className="h-full w-full">
-      <g
-        fill="none"
-        stroke="#8a641e"
-        strokeWidth="2"
-        strokeLinecap="round"
-        opacity="0.62"
-      >
-        <path d="M160 18 C150 42 133 48 112 44" />
-        <path d="M160 18 C170 42 187 48 208 44" />
-        <path d="M112 44 C84 48 68 66 70 92" />
-        <path d="M208 44 C236 48 252 66 250 92" />
-        <path d="M70 92 C90 72 112 74 128 96" />
-        <path d="M250 92 C230 72 208 74 192 96" />
-        <path d="M128 96 C142 118 178 118 192 96" />
-        <path d="M96 132 C124 146 196 146 224 132" />
-        <path d="M130 144 C140 160 180 160 190 144" />
+      <g fill="#7d5b1d" opacity="0.26">
+        <circle cx="58" cy="78" r="5" />
+        <circle cx="156" cy="76" r="5" />
+        <circle cx="34" cy="154" r="5" />
       </g>
     </svg>
   )
