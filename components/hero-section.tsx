@@ -20,7 +20,7 @@ export function HeroSection() {
         <img
             src="/ganpati.png"
             alt="Ganpati"
-            className="h-28 w-28 md:h-33 md:w-33 object-contain opacity-90 drop-shadow-md animate-fade-in"
+            className="h-20 w-20 md:h-25 md:w-25 object-contain opacity-90 drop-shadow-md animate-fade-in"
         />
       </div>
       {/* Background image */}
