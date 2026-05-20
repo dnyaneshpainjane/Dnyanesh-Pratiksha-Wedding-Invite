@@ -19,8 +19,8 @@ export function HeroSection() {
       <div className="relative z-20 flex justify-center mb-4">
         <img
             src="/ganpati.png"
-                alt="Ganpati"
-                    className="h-14 w-14 md:h-16 md:w-16 object-contain opacity-90 drop-shadow-md animate-fade-in"
+            alt="Ganpati"
+            className="h-36 w-36 md:h-44 md:w-44 object-contain opacity-90 drop-shadow-md animate-fade-in"
         />
       </div>
       {/* Background image */}
