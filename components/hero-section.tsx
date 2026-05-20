@@ -18,7 +18,7 @@ export function HeroSection() {
       {/* Ganpati Icon */}
       <div className="relative z-20 flex justify-center mb-4">
         <img
-            src="/ganpati.png"
+            src="/ganpati1.png"
             alt="Ganpati"
             className="h-20 w-20 md:h-25 md:w-25 object-contain opacity-90 drop-shadow-md animate-fade-in"
         />
