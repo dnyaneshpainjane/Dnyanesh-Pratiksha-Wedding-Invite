@@ -13,20 +13,20 @@ const galleryImages = [
   },
   {
     src: "/IMG_8812.jpg",
-    alt: "Engagement celebration",
-    title: "Engagement Ceremony",
+    // alt: "Engagement celebration",
+    // title: "Engagement Ceremony",
     span: "",
   },
   {
     src: "/IMG_0306.jpg",
-    alt: "Coffee date",
-    title: "Beautiful Moments",
+    // alt: "Coffee date",
+    // title: "Beautiful Moments",
     span: "",
   },
   {
     src: "/gallery-1.jpg",
-    alt: "Adventure together",
-    title: "Our Journey",
+    // alt: "Adventure together",
+    // title: "Our Journey",
     span: "md:col-span-2",
   },
 ]
@@ -116,8 +116,8 @@ export function GallerySection() {
               style={{ transitionDelay: `${150 + index * 100}ms` }}
             >
               <Image
-                src={image.src}
-                alt={image.alt}
+                {/* src={image.src}
+                alt={image.alt} */}
                 fill
                 className="object-cover transition-transform duration-700 group-hover:scale-110"
                 sizes={
