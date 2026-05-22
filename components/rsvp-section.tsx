@@ -49,7 +49,7 @@ const familyDetails = [
       },
       {
         label: 'Grandparents',
-        value: 'Shri Champalal & Smt. __ Wade',
+        value: 'Shri Gangadhar & Smt. Kamal Bochakari',
       },
       {
         label: 'Siblings',
