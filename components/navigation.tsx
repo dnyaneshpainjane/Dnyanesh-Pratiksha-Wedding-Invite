@@ -1,7 +1,8 @@
 'use client'
 
 import { useState } from 'react'
-import { Menu, X, VolumeX } from 'lucide-react'
+import { Menu, X } from 'lucide-react'
+import { AudioPlayer } from './audio-player'
 
 export function Navigation() {
   const [isOpen, setIsOpen] = useState(false)
@@ -17,6 +18,7 @@ export function Navigation() {
   return (
     <nav className="sticky top-0 z-40 bg-gradient-to-r from-[#3D2F3A] via-[#4A3A47] to-[#3D2F3A] backdrop-blur border-b border-[#B76E79]/30 shadow-md">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        {/* Reduced height: h-20 → h-16 */}
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
           <div className="flex-shrink-0">
@@ -47,19 +49,11 @@ export function Navigation() {
             ))}
           </div>
 
-          {/* Highlighted Mute Button + Mobile Menu Button */}
+          {/* Audio Player + Mobile Menu Button */}
           <div className="flex items-center gap-3">
-            <button
-              type="button"
-              className="flex items-center gap-2 px-4 py-2 rounded-full bg-[#B76E79]/30 border border-[#E6D7BE]/50 text-[#E6D7BE] hover:bg-[#B76E79]/50 hover:text-white hover:border-[#E6D7BE] transition-all duration-300 text-xs tracking-widest font-light shadow-[0_0_14px_rgba(183,110,121,0.35)]"
-              aria-label="Music muted"
-            >
-              <VolumeX size={15} />
-              <span className="hidden sm:inline">MUTE</span>
-            </button>
+            <AudioPlayer />
 
             <button
-              type="button"
               onClick={() => setIsOpen(!isOpen)}
               className="md:hidden p-1.5 rounded-lg hover:bg-[#B76E79]/20 text-[#E6D7BE] transition-colors"
               aria-label="Toggle navigation menu"
