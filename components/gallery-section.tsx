@@ -139,9 +139,9 @@ export function GallerySection() {
 
               <div className="absolute inset-x-0 bottom-0 p-4 md:p-5">
                 <div className="translate-y-1.5 transition-transform duration-500 group-hover:translate-y-0">
-                  <p className="mb-1 text-[10px] md:text-[11px] uppercase tracking-[0.22em] text-white/80 font-sans font-semibold">
+                  {/* <p className="mb-1 text-[10px] md:text-[11px] uppercase tracking-[0.22em] text-white/80 font-sans font-semibold">
                     Memory {String(index + 1).padStart(2, "0")}
-                  </p>
+                  </p> */}
 
                   <h3 className="font-serif text-xl md:text-2xl font-medium text-white drop-shadow-sm">
                     {image.title}
