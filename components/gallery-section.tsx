@@ -116,8 +116,8 @@ export function GallerySection() {
               style={{ transitionDelay: `${150 + index * 100}ms` }}
             >
               <Image
-                {/* src={image.src}
-                alt={image.alt} */}
+                src={image.src}
+                alt={image.alt}
                 fill
                 className="object-cover transition-transform duration-700 group-hover:scale-110"
                 sizes={
