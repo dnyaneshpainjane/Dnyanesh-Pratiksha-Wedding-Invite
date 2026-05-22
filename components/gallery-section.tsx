@@ -7,8 +7,8 @@ import { Image as ImageIcon, Sparkles, Heart } from "lucide-react"
 const galleryImages = [
   {
     src: "/IMG_0307.jpg",
-    alt: "Dnyanesh and Pratiksha at sunset",
-    title: "Pre-Wedding Shoot",
+    // alt: "Dnyanesh and Pratiksha at sunset",
+    // title: "Pre-Wedding Shoot",
     span: "md:col-span-2 md:row-span-2",
   },
   {
