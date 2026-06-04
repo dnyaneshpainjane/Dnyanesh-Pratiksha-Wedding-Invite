@@ -3,20 +3,17 @@
 import { useEffect, useState } from 'react'
 import { X } from 'lucide-react'
 
-export function DoorOpening({
-  onClose,
-}: {
+type DoorOpeningProps = {
   onClose: () => void
-}) {
+}
+
+export function DoorOpening({ onClose }: DoorOpeningProps) {
   const [isOpen, setIsOpen] = useState(false)
   const [showReveal, setShowReveal] = useState(false)
   const [hideIntro, setHideIntro] = useState(false)
 
   useEffect(() => {
-    const timer = setTimeout(() => {
-      openDoor()
-    }, 5500)
-
+    const timer = setTimeout(openDoor, 5500)
     return () => clearTimeout(timer)
   }, [])
 
@@ -27,7 +24,7 @@ export function DoorOpening({
 
     setTimeout(() => {
       setShowReveal(true)
-    }, 2100)
+    }, 1800)
 
     setTimeout(() => {
       setHideIntro(true)
@@ -43,27 +40,25 @@ export function DoorOpening({
   if (hideIntro) return null
 
   return (
-    <div className="fixed inset-0 z-50 overflow-hidden bg-[#d5ad49]">
-      {/* Revealed small wedding card */}
+    <div className="fixed inset-0 z-50 overflow-hidden bg-[#d4a83f]">
+      {/* Reveal Card */}
       <div
-        className={`absolute inset-0 z-0 flex items-center justify-center overflow-hidden bg-[#f6e7bd] transition-all duration-[2200ms] ease-[cubic-bezier(.19,1,.22,1)] ${
+        className={`absolute inset-0 z-0 flex items-center justify-center overflow-hidden bg-[#f7e8bd] transition-all duration-[2200ms] ease-[cubic-bezier(.19,1,.22,1)] ${
           showReveal ? 'scale-100 opacity-100' : 'scale-110 opacity-0'
         }`}
       >
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(255,248,224,.96)_0%,rgba(239,209,133,.82)_52%,rgba(165,118,35,.72)_100%)]" />
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,#fff8dd_0%,#efcf80_55%,#9f6d1e_100%)]" />
+        <div className="absolute inset-0 opacity-[0.12] bg-[radial-gradient(circle,#7b5617_1px,transparent_1.5px)] bg-[size:22px_22px]" />
 
-        <div className="absolute inset-0 opacity-[0.12] bg-[radial-gradient(circle,#7f5719_1px,transparent_1.5px)] bg-[size:22px_22px]" />
-
-        {/* Soft gold floral corners behind card */}
-        <div className="absolute left-4 top-4 h-52 w-52 opacity-45 sm:h-72 sm:w-72">
+        <div className="absolute left-4 top-4 h-56 w-56 opacity-40 sm:h-72 sm:w-72">
           <GoldFlower />
         </div>
 
-        <div className="absolute bottom-4 right-4 h-52 w-52 rotate-180 opacity-45 sm:h-72 sm:w-72">
+        <div className="absolute bottom-4 right-4 h-56 w-56 rotate-180 opacity-40 sm:h-72 sm:w-72">
           <GoldFlower />
         </div>
 
-        <div className="relative mx-5 w-[88vw] max-w-[520px] rounded-[1.8rem] border border-[#d6ad55]/70 bg-[#fff7dc]/82 px-6 py-9 text-center shadow-[0_28px_80px_rgba(88,59,15,.28)] backdrop-blur-md sm:px-10 sm:py-11">
+        <div className="relative mx-5 w-[88vw] max-w-[520px] rounded-[1.8rem] border border-[#d5ad57]/70 bg-[#fff7dc]/85 px-6 py-9 text-center shadow-[0_28px_80px_rgba(88,59,15,.3)] backdrop-blur-md sm:px-10 sm:py-11">
           <div className="absolute inset-3 rounded-[1.35rem] border border-[#d0a349]/45" />
 
           <div className="relative mx-auto mb-5 flex h-16 w-16 items-center justify-center rounded-full border border-[#be8f2d]/60 bg-[radial-gradient(circle_at_34%_24%,#fff1b8,#c99634_55%,#704815)] shadow-[inset_3px_4px_8px_rgba(255,240,179,.48),inset_-5px_-6px_10px_rgba(72,42,9,.38)]">
@@ -96,30 +91,22 @@ export function DoorOpening({
           </p>
 
           <div className="relative mx-auto mt-7 grid max-w-sm grid-cols-3 gap-2">
-            <div className="rounded-xl border border-[#dec17a]/70 bg-[#fff9e8]/70 px-3 py-3">
-              <p className="text-[9px] uppercase tracking-[0.2em] text-[#9b7024]">
-                Love
-              </p>
-            </div>
-
-            <div className="rounded-xl border border-[#dec17a]/70 bg-[#fff9e8]/70 px-3 py-3">
-              <p className="text-[9px] uppercase tracking-[0.2em] text-[#9b7024]">
-                Forever
-              </p>
-            </div>
-
-            <div className="rounded-xl border border-[#dec17a]/70 bg-[#fff9e8]/70 px-3 py-3">
-              <p className="text-[9px] uppercase tracking-[0.2em] text-[#9b7024]">
-                Blessings
-              </p>
-            </div>
+            {['Love', 'Forever', 'Blessings'].map((item) => (
+              <div
+                key={item}
+                className="rounded-xl border border-[#dec17a]/70 bg-[#fff9e8]/70 px-3 py-3"
+              >
+                <p className="text-[9px] uppercase tracking-[0.2em] text-[#9b7024]">
+                  {item}
+                </p>
+              </div>
+            ))}
           </div>
         </div>
       </div>
 
-      {/* Full screen gold door */}
+      {/* Door Layer */}
       <div className="absolute inset-0 z-20 perspective-[2200px]">
-        {/* Left panel */}
         <div
           className={`absolute left-0 top-0 h-full w-1/2 origin-left overflow-hidden border-r border-[#8f6824]/45 transition-transform duration-[3200ms] ease-[cubic-bezier(.19,1,.22,1)] ${
             isOpen ? 'door-left-open' : 'door-left-closed'
@@ -128,7 +115,6 @@ export function DoorOpening({
           <GoldDoorPanel side="left" />
         </div>
 
-        {/* Right panel */}
         <div
           className={`absolute right-0 top-0 h-full w-1/2 origin-right overflow-hidden border-l border-[#8f6824]/45 transition-transform duration-[3200ms] ease-[cubic-bezier(.19,1,.22,1)] ${
             isOpen ? 'door-right-open' : 'door-right-closed'
@@ -137,14 +123,12 @@ export function DoorOpening({
           <GoldDoorPanel side="right" />
         </div>
 
-        {/* Center split */}
         <div
           className={`absolute left-1/2 top-0 z-30 h-full w-[2px] -translate-x-1/2 bg-gradient-to-b from-transparent via-[#6d4913]/60 to-transparent transition-opacity duration-[1200ms] ${
             isOpen ? 'opacity-0' : 'opacity-100'
           }`}
         />
 
-        {/* Center stamp only */}
         <button
           onClick={openDoor}
           disabled={isOpen}
@@ -156,11 +140,9 @@ export function DoorOpening({
           }`}
         >
           <span className="absolute inset-0 rounded-full border border-[#6e501b]/50 bg-[radial-gradient(circle_at_36%_28%,#ffeaa3_0%,#d9ae4f_34%,#9a6d21_68%,#513612_100%)] shadow-[0_24px_50px_rgba(66,45,13,.46),inset_5px_7px_14px_rgba(255,244,181,.55),inset_-9px_-13px_20px_rgba(65,39,8,.5)]" />
-
           <span className="absolute inset-[8px] rounded-full border border-[#fff0b0]/70" />
           <span className="absolute inset-[18px] rounded-full border border-[#735016]/50 bg-[radial-gradient(circle_at_35%_25%,#e4bd62,#90621e_58%,#4d310d_100%)] shadow-[inset_0_5px_12px_rgba(46,28,6,.58)]" />
           <span className="absolute inset-[32px] rounded-full border border-[#f9df90]/55" />
-
           <span className="absolute left-9 top-7 h-9 w-16 -rotate-12 rounded-full bg-white/20 blur-md" />
 
           <span className="relative text-center font-serif text-[#ffeab0] drop-shadow-[0_2px_1px_rgba(45,28,7,.8)]">
@@ -192,6 +174,10 @@ export function DoorOpening({
       </div>
 
       <style jsx>{`
+        .perspective-\\[2200px\\] {
+          perspective: 2200px;
+        }
+
         .door-left-closed {
           transform: perspective(2200px) rotateY(0deg);
           transform-style: preserve-3d;
@@ -223,16 +209,12 @@ export function DoorOpening({
 function GoldDoorPanel({ side }: { side: 'left' | 'right' }) {
   return (
     <div className="relative h-full w-full overflow-hidden bg-[#c69a35]">
-      {/* Gold metallic base */}
       <div className="absolute inset-0 bg-[linear-gradient(115deg,#8d641b_0%,#d8af4b_22%,#f5dd87_46%,#c2932e_72%,#805613_100%)]" />
 
-      {/* Embossed texture */}
       <div className="absolute inset-0 opacity-[0.34] bg-[radial-gradient(ellipse_at_center,rgba(255,255,255,.7)_0%,rgba(255,255,255,.22)_28%,transparent_30%),radial-gradient(ellipse_at_center,rgba(86,52,8,.48)_0%,transparent_32%)] bg-[size:34px_26px] bg-[position:0_0,17px_13px]" />
 
-      {/* Fine gold grain */}
       <div className="absolute inset-0 opacity-[0.16] bg-[repeating-linear-gradient(90deg,rgba(255,255,255,.55)_0_1px,transparent_1px_8px),repeating-linear-gradient(0deg,rgba(82,48,8,.45)_0_1px,transparent_1px_10px)]" />
 
-      {/* Elegant inner border */}
       <div
         className={`absolute inset-y-7 ${
           side === 'left'
@@ -241,7 +223,6 @@ function GoldDoorPanel({ side }: { side: 'left' | 'right' }) {
         } border-y border-[#ffe7a6]/55`}
       />
 
-      {/* Corner flowers matching gold theme */}
       {side === 'left' ? (
         <>
           <div className="absolute left-3 top-4 h-52 w-40 opacity-60 sm:left-6 sm:top-8 sm:h-64 sm:w-52">
@@ -264,7 +245,6 @@ function GoldDoorPanel({ side }: { side: 'left' | 'right' }) {
         </>
       )}
 
-      {/* Corner glow */}
       <div
         className={`absolute top-0 h-72 w-72 rounded-full bg-[#fff0a9]/16 blur-3xl ${
           side === 'left' ? 'left-[-120px]' : 'right-[-120px]'
@@ -277,10 +257,8 @@ function GoldDoorPanel({ side }: { side: 'left' | 'right' }) {
         }`}
       />
 
-      {/* Center glow */}
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(255,238,165,.36)_0%,transparent_58%)]" />
 
-      {/* Edge depth near opening */}
       <div
         className={`absolute top-0 h-full w-10 ${
           side === 'left'
