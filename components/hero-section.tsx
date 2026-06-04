@@ -13,98 +13,89 @@ export function HeroSection() {
   return (
     <section
       id="hero"
-      className="relative overflow-hidden py-12 md:py-16 lg:py-20"
+      className="relative min-h-screen overflow-hidden py-12 md:py-16 lg:py-20"
     >
-      {/* Ganpati Icon */}
-      <div className="relative z-20 mb-4 flex justify-center">
-        <img
-          src="/ganpati1.png"
-          alt="Ganpati"
-          className="h-20 w-20 object-contain opacity-90 drop-shadow-md animate-fade-in md:h-24 md:w-24"
-        />
-      </div>
-
       {/* Background image */}
       <div
         className="absolute inset-0 bg-cover bg-center bg-no-repeat"
         style={{ backgroundImage: 'url(/hero-background.jpg)' }}
       />
 
-      {/* Luxury Peach Overlay */}
-      <div className="absolute inset-0 bg-gradient-to-b from-[#f8ebe5]/88 via-[#f4d6cb]/92 to-[#efc1b3]/96" />
+      {/* Soft royal peach overlay */}
+      <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(255,247,244,0.94)_0%,rgba(248,226,218,0.93)_45%,rgba(238,194,180,0.94)_100%)]" />
 
-      {/* Soft Peach Glow */}
-      <div className="absolute inset-0 overflow-hidden">
-        <div className="absolute left-1/4 top-0 h-72 w-72 rounded-full bg-[#d9a18f]/20 blur-3xl md:h-96 md:w-96 animate-pulse" />
+      {/* Elegant radial glow */}
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(255,255,255,0.8)_0%,rgba(255,239,232,0.45)_42%,rgba(221,154,136,0.28)_100%)]" />
 
-        <div
-          className="absolute bottom-0 right-1/4 h-72 w-72 rounded-full bg-[#fff1eb]/30 blur-3xl md:h-96 md:w-96 animate-pulse"
-          style={{ animationDelay: '1s' }}
+      {/* Decorative soft corner glows */}
+      <div className="absolute -left-32 top-20 h-96 w-96 rounded-full bg-[#f8cfc2]/35 blur-3xl" />
+      <div className="absolute -right-32 bottom-20 h-96 w-96 rounded-full bg-[#d99b88]/25 blur-3xl" />
+
+      {/* Ganpati Icon */}
+      <div className="relative z-20 mb-6 flex justify-center">
+        <img
+          src="/ganpati1.png"
+          alt="Ganpati"
+          className="h-20 w-20 object-contain opacity-95 drop-shadow-lg animate-fade-in md:h-24 md:w-24"
         />
       </div>
 
       <ButterflyAnimation />
 
       <div className="relative z-10 mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
-        <div className="space-y-6 text-center md:space-y-8">
+        <div className="mx-auto max-w-4xl rounded-[3rem] border border-white/55 bg-white/20 px-5 py-10 text-center shadow-[0_30px_90px_rgba(135,78,65,0.16)] backdrop-blur-[2px] md:px-12 md:py-14">
           {/* Decorative dots */}
-          <div className="flex justify-center gap-3 opacity-60 animate-fade-in">
+          <div className="mb-8 flex justify-center gap-3 opacity-70 animate-fade-in">
+            <div className="h-1.5 w-1.5 rounded-full bg-[#b67564] animate-bounce" />
             <div
-              className="h-1.5 w-1.5 rounded-full bg-[#b87968] animate-bounce"
-              style={{ animationDelay: '0s' }}
-            />
-            <div
-              className="h-1.5 w-1.5 rounded-full bg-[#d9b4a8] animate-bounce"
+              className="h-1.5 w-1.5 rounded-full bg-[#e3b7a8] animate-bounce"
               style={{ animationDelay: '0.2s' }}
             />
             <div
-              className="h-1.5 w-1.5 rounded-full bg-[#b87968] animate-bounce"
+              className="h-1.5 w-1.5 rounded-full bg-[#b67564] animate-bounce"
               style={{ animationDelay: '0.4s' }}
             />
           </div>
 
-          {/* Couple Names */}
-          <div className="space-y-4 md:space-y-5 animate-slide-up">
-            <div className="mb-3">
-              <span
-                className={`${pinyon.className} block text-7xl leading-[0.95] text-[#7b5148] drop-shadow-sm md:text-8xl lg:text-[8.5rem]`}
-              >
-                Dnyanesh
-              </span>
+          {/* Names */}
+          <div className="animate-slide-up">
+            <span
+              className={`${pinyon.className} block text-7xl leading-[0.95] text-[#70483f] drop-shadow-[0_4px_14px_rgba(112,72,63,0.18)] md:text-8xl lg:text-[8.5rem]`}
+            >
+              Dnyanesh
+            </span>
 
-              <span
-                className={`${pinyon.className} block my-1 text-4xl leading-none text-[#c18d7c] md:my-2 md:text-5xl lg:text-6xl`}
-              >
-                &
-              </span>
+            <span
+              className={`${pinyon.className} my-2 block text-5xl leading-none text-[#b47a6b] md:text-6xl`}
+            >
+              &
+            </span>
 
-              <span
-                className={`${pinyon.className} block text-7xl leading-[0.95] text-[#7b5148] drop-shadow-sm md:text-8xl lg:text-[8.5rem]`}
-              >
-                Pratiksha
-              </span>
-            </div>
+            <span
+              className={`${pinyon.className} block text-7xl leading-[0.95] text-[#70483f] drop-shadow-[0_4px_14px_rgba(112,72,63,0.18)] md:text-8xl lg:text-[8.5rem]`}
+            >
+              Pratiksha
+            </span>
 
-            <div className="space-y-1.5 md:space-y-2">
-              <p className="text-center text-xs font-medium uppercase tracking-[0.32em] text-[#b87968] md:text-sm">
+            <div className="mt-8 space-y-2">
+              <p className="text-xs font-semibold uppercase tracking-[0.42em] text-[#b67564] md:text-sm">
                 Our Story
               </p>
 
-              <p className="text-sm font-light italic text-[#8f6d65] md:text-base">
+              <p className="text-sm font-light italic text-[#7f5f57] md:text-base">
                 Celebrating Love & Unity
               </p>
             </div>
           </div>
 
-          {/* Heart Divider */}
-          <div className="flex items-center justify-center gap-3 py-1 opacity-80">
-            <div className="h-px w-10 bg-gradient-to-r from-transparent to-[#b87968]/70" />
+          {/* Heart divider */}
+          <div className="my-8 flex items-center justify-center gap-4 opacity-80">
+            <div className="h-px w-14 bg-gradient-to-r from-transparent to-[#b67564]/60" />
 
-            <div className="relative flex h-8 w-8 items-center justify-center">
-              <div className="absolute inset-0 rounded-full bg-[#b87968]/10 blur-md" />
-
+            <div className="relative flex h-9 w-9 items-center justify-center">
+              <div className="absolute inset-0 rounded-full bg-[#d79b89]/20 blur-md" />
               <svg
-                className="relative h-4.5 w-4.5 text-[#b87968] animate-bounce"
+                className="relative h-4 w-4 text-[#b67564] animate-bounce"
                 viewBox="0 0 24 24"
                 fill="currentColor"
               >
@@ -112,22 +103,18 @@ export function HeroSection() {
               </svg>
             </div>
 
-            <div className="h-px w-10 bg-gradient-to-l from-transparent to-[#b87968]/70" />
+            <div className="h-px w-14 bg-gradient-to-l from-transparent to-[#b67564]/60" />
           </div>
 
           {/* Description */}
-          <p className="mx-auto max-w-3xl text-sm font-light leading-relaxed text-[#7c655d] md:text-base animate-fade-in">
+          <p className="mx-auto max-w-3xl text-sm font-light leading-8 text-[#6f5a54] md:text-base">
             Together with our families, we joyfully invite you to celebrate our
             wedding as we unite in love and commitment. Join us for a memorable
             celebration of life, culture, and happiness that will be etched in
             our hearts forever.
           </p>
 
-          {/* Countdown */}
-          <div
-            className="mt-8 md:mt-10 animate-fade-in-up"
-            style={{ animationDelay: '200ms' }}
-          >
+          <div className="mt-10 animate-fade-in-up">
             <CountdownTimer />
           </div>
         </div>
