@@ -16,6 +16,7 @@ export function DoorOpening({ onClose }: DoorOpeningProps) {
   useEffect(() => {
     const timer = setTimeout(openDoor, 1600)
     return () => clearTimeout(timer)
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 
   const openDoor = () => {
@@ -52,42 +53,44 @@ export function DoorOpening({ onClose }: DoorOpeningProps) {
             className="flower-breathe pointer-events-none absolute inset-0 z-0 h-full w-full scale-[1.02] object-contain opacity-95"
           />
 
-          <div className="absolute inset-x-4 inset-y-4 z-[1] flex flex-col items-center justify-center rounded-t-[12rem] rounded-b-[2.5rem] border border-white/40 bg-white/15 px-8 text-center shadow-[0_30px_80px_rgba(139,77,70,.12)] backdrop-blur-xl">
-            <div className="w-full max-w-[420px]">
-              <p className="mb-8 text-[11px] uppercase tracking-[0.48em] text-[#bd7e77]">
-                Wedding Invitation
-              </p>
+          <div className="absolute inset-x-4 inset-y-4 z-[1] rounded-t-[12rem] rounded-b-[2.5rem] border border-white/40 bg-white/15 px-6 shadow-[0_30px_80px_rgba(139,77,70,.12)] backdrop-blur-xl sm:px-8">
+            <div className="flex h-full w-full items-center justify-center text-center">
+              <div className="mx-auto flex w-full max-w-[420px] flex-col items-center justify-center">
+                <p className="mb-7 text-[11px] uppercase tracking-[0.48em] text-[#bd7e77]">
+                  Wedding Invitation
+                </p>
 
-              <h1 className="font-serif text-[clamp(3rem,7vw,4.5rem)] font-light leading-[1.05] text-[#815a55]">
-                Dnyanesh
-              </h1>
+                <h1 className="font-serif text-[clamp(3rem,7vw,4.5rem)] font-light leading-[1.05] text-[#815a55]">
+                  Dnyanesh
+                </h1>
 
-              <span className="mt-3 block font-serif text-4xl italic text-[#bd8078]">
-                &
-              </span>
+                <span className="mt-3 block font-serif text-4xl italic text-[#bd8078]">
+                  &
+                </span>
 
-              <h1 className="mt-3 font-serif text-[clamp(3rem,7vw,4.5rem)] font-light leading-[1.05] text-[#815a55]">
-                Pratiksha
-              </h1>
+                <h1 className="mt-3 font-serif text-[clamp(3rem,7vw,4.5rem)] font-light leading-[1.05] text-[#815a55]">
+                  Pratiksha
+                </h1>
 
-              <p className="mx-auto mt-10 max-w-[320px] text-[15px] leading-8 text-[#936964]">
-                With love, joy, and blessings, we invite you to celebrate the
-                beginning of our forever.
-              </p>
+                <p className="mt-9 max-w-[320px] text-[15px] leading-8 text-[#936964]">
+                  With love, joy, and blessings, we invite you to celebrate the
+                  beginning of our forever.
+                </p>
 
-              <div className="mx-auto mt-10 h-px w-52 bg-gradient-to-r from-transparent via-[#dfaaa3] to-transparent" />
+                <div className="mt-9 h-px w-52 bg-gradient-to-r from-transparent via-[#dfaaa3] to-transparent" />
 
-              <p className="mt-10 font-serif text-3xl italic text-[#a66f68]">
-                Save the Date
-              </p>
+                <p className="mt-9 font-serif text-3xl italic text-[#a66f68]">
+                  Save the Date
+                </p>
 
-              <p className="mt-4 text-[11px] uppercase tracking-[0.45em] text-[#b88780]">
-                Saturday
-              </p>
+                <p className="mt-4 text-[11px] uppercase tracking-[0.45em] text-[#b88780]">
+                  Saturday
+                </p>
 
-              <p className="mt-3 font-serif text-[clamp(2.6rem,6vw,4rem)] text-[#8a625d]">
-                27 June 2026
-              </p>
+                <p className="mt-3 font-serif text-[clamp(2.6rem,6vw,4rem)] text-[#8a625d]">
+                  27 June 2026
+                </p>
+              </div>
             </div>
           </div>
         </div>
@@ -201,7 +204,7 @@ function PeachDoor({ side }: { side: 'left' | 'right' }) {
   return (
     <div className="relative h-full w-full overflow-hidden bg-[#f3c4bb]">
       <div className="absolute inset-0 bg-[linear-gradient(120deg,#fbe0db_0%,#efb7ad_45%,#f8d8d2_100%)]" />
-      <div className="absolute inset-0 opacity-45 bg-[radial-gradient(circle_at_30%_20%,rgba(255,255,255,.6),transparent_28%),radial-gradient(circle_at_80%_70%,rgba(210,122,110,.22),transparent_32%)]" />
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(255,255,255,.6),transparent_28%),radial-gradient(circle_at_80%_70%,rgba(210,122,110,.22),transparent_32%)] opacity-45" />
 
       <div
         className={`absolute top-0 h-full w-28 ${
