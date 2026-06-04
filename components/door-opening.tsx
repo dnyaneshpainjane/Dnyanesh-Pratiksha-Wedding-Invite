@@ -218,7 +218,7 @@ export function DoorOpening({ onClose }: DoorOpeningProps) {
 
 function PeachDoor({ side }: { side: 'left' | 'right' }) {
   return (
-    <div className="relative h-full w-full overflow-hidden">
+    <div className="relative h-full w-full overflow-hidden bg-[#e9a996]">
       <Image
         src={doorImage}
         alt="Wedding door"
@@ -226,15 +226,15 @@ function PeachDoor({ side }: { side: 'left' | 'right' }) {
         priority
         sizes="50vw"
         className={`object-cover ${
-          side === 'left' ? 'object-left' : 'object-right'
+          side === 'right' ? 'scale-x-[-1]' : ''
         }`}
       />
 
       <div
-        className={`absolute inset-y-0 w-16 ${
+        className={`absolute inset-y-0 w-20 ${
           side === 'left'
-            ? 'right-0 bg-gradient-to-l from-black/10 to-transparent'
-            : 'left-0 bg-gradient-to-r from-black/10 to-transparent'
+            ? 'right-0 bg-gradient-to-l from-black/15 to-transparent'
+            : 'left-0 bg-gradient-to-r from-black/15 to-transparent'
         }`}
       />
     </div>
