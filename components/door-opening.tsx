@@ -36,49 +36,60 @@ export function DoorOpening({ onClose }: DoorOpeningProps) {
   if (hideIntro) return null
 
   return (
-    <div className="fixed inset-0 z-50 overflow-hidden bg-[#f6cfc8]">
-      {/* Invitation content */}
-      <div className="absolute inset-0 z-0 flex items-center justify-center overflow-hidden bg-[#fff8f7]">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_15%,#ffffff_0%,#fff1ef_45%,#f2bdb4_100%)]" />
-
-        <div className="absolute -left-24 top-16 h-80 w-80 rounded-full bg-[#ecaaa0]/30 blur-3xl" />
-        <div className="absolute -right-20 bottom-20 h-96 w-96 rounded-full bg-[#f4b9ad]/35 blur-3xl" />
+    <div className="fixed inset-0 z-50 overflow-hidden bg-[#f3c7c0]">
+      {/* Background invitation */}
+      <div className="absolute inset-0 z-0 flex items-center justify-center overflow-hidden bg-[#fff7f5]">
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_12%,#fff_0%,#fff1ee_45%,#efbeb6_100%)]" />
 
         <div
-          className={`relative mx-5 flex min-h-[76vh] w-[88vw] max-w-[450px] flex-col items-center justify-center overflow-hidden rounded-t-[13rem] rounded-b-[2.5rem] border border-white/70 bg-[#fde7e4]/85 px-8 py-12 text-center shadow-[0_35px_100px_rgba(166,91,82,.28)] transition-all duration-[1400ms] ${
+          className={`relative mx-5 flex h-[86vh] w-[90vw] max-w-[470px] items-center justify-center rounded-t-[18rem] rounded-b-[3rem] border border-white/70 bg-[#f9dcd7]/70 shadow-[0_35px_100px_rgba(140,78,70,.25)] transition-all duration-[1400ms] ${
             isOpen ? 'scale-100 opacity-100' : 'scale-95 opacity-80'
           }`}
         >
+          {/* Flowers placed OUTSIDE the main card */}
           <Image
             src={flowers}
             alt="Floral decoration"
             priority
-            className={`flower-float pointer-events-none absolute inset-0 z-0 h-full w-full object-contain opacity-90 transition-all duration-[1800ms] ${
-              isOpen ? 'scale-100 opacity-100' : 'scale-90 opacity-0'
-            }`}
+            className="flower-float pointer-events-none absolute -left-24 top-[17%] z-0 w-56 opacity-95"
           />
 
-          <div className="relative z-10 rounded-[2rem] bg-[#fff8f6]/55 px-7 py-9 shadow-[0_15px_45px_rgba(160,94,84,.12)] backdrop-blur-sm">
-            <p className="mb-4 text-[10px] uppercase tracking-[0.42em] text-[#b47770]">
+          <Image
+            src={flowers}
+            alt="Floral decoration"
+            priority
+            className="flower-float-reverse pointer-events-none absolute -right-28 top-[35%] z-0 w-72 opacity-95"
+          />
+
+          <Image
+            src={flowers}
+            alt="Floral decoration"
+            priority
+            className="flower-float pointer-events-none absolute -bottom-16 right-0 z-0 w-64 opacity-90"
+          />
+
+          {/* Main card */}
+          <div className="relative z-10 mx-6 flex min-h-[67vh] w-full flex-col items-center justify-center rounded-b-[2.5rem] bg-[#fff4f1]/92 px-7 py-12 text-center shadow-[0_25px_70px_rgba(136,80,73,.18)] backdrop-blur-sm">
+            <p className="mb-8 text-[12px] uppercase tracking-[0.48em] text-[#bf7f78]">
               Wedding Invitation
             </p>
 
-            <h1 className="font-serif text-5xl font-light leading-tight text-[#875b55]">
+            <h1 className="font-serif text-[4.1rem] font-light leading-[1.05] text-[#875e59]">
               Dnyanesh
-              <span className="block py-2 text-3xl italic text-[#c4877d]">
+              <span className="block py-3 text-4xl italic text-[#bd7f77]">
                 &
               </span>
               Pratiksha
             </h1>
 
-            <p className="mt-7 max-w-xs text-sm leading-7 text-[#936963]">
+            <p className="mt-10 max-w-[310px] text-base leading-8 text-[#936964]">
               With love, joy, and blessings, we invite you to celebrate the
               beginning of our forever.
             </p>
 
-            <div className="mx-auto mt-8 h-px w-36 bg-gradient-to-r from-transparent via-[#d59b93] to-transparent" />
+            <div className="mt-11 h-px w-44 bg-gradient-to-r from-transparent via-[#e2aaa3] to-transparent" />
 
-            <p className="mt-5 font-serif text-xl italic text-[#a86f68]">
+            <p className="mt-8 font-serif text-3xl italic text-[#a66e68]">
               Save the Date
             </p>
           </div>
@@ -103,7 +114,6 @@ export function DoorOpening({ onClose }: DoorOpeningProps) {
           <PeachDoor side="right" />
         </div>
 
-        {/* Center seam */}
         <div
           className={`absolute left-1/2 top-0 z-30 h-full w-[96px] -translate-x-1/2 transition-opacity duration-700 ${
             isOpen ? 'opacity-0' : 'opacity-100'
@@ -114,7 +124,6 @@ export function DoorOpening({ onClose }: DoorOpeningProps) {
           <div className="absolute bottom-0 left-1/2 h-[135px] w-[96px] -translate-x-1/2 rounded-b-full border-b-2 border-l-2 border-white/75" />
         </div>
 
-        {/* Seal */}
         <button
           onClick={openDoor}
           disabled={isOpen}
@@ -176,16 +185,30 @@ export function DoorOpening({ onClose }: DoorOpeningProps) {
         }
 
         :global(.flower-float) {
-          animation: flowerFloat 5.5s ease-in-out infinite;
+          animation: flowerFloat 6s ease-in-out infinite;
+        }
+
+        :global(.flower-float-reverse) {
+          animation: flowerFloatReverse 6.5s ease-in-out infinite;
         }
 
         @keyframes flowerFloat {
           0%,
           100% {
-            transform: scale(1) translateY(0);
+            transform: translateY(0) scale(1);
           }
           50% {
-            transform: scale(1.035) translateY(-10px);
+            transform: translateY(-12px) scale(1.04);
+          }
+        }
+
+        @keyframes flowerFloatReverse {
+          0%,
+          100% {
+            transform: translateY(0) scale(1) rotate(0deg);
+          }
+          50% {
+            transform: translateY(12px) scale(1.035) rotate(1.5deg);
           }
         }
       `}</style>
