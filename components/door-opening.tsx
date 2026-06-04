@@ -49,43 +49,46 @@ export function DoorOpening({ onClose }: DoorOpeningProps) {
             src={flowers}
             alt="Floral frame"
             priority
-            className="flower-breathe pointer-events-none absolute inset-0 z-0 h-full w-full scale-[1.08] object-contain opacity-95"
+            className="flower-breathe pointer-events-none absolute inset-0 z-0 h-full w-full scale-[1.02] object-contain opacity-95"
           />
 
-          <div className="absolute inset-x-4 inset-y-4 z-[1] rounded-t-[12rem] rounded-b-[2.5rem] border border-white/60 bg-[#f8d8d3]/35 shadow-[0_30px_100px_rgba(139,77,70,.18)]" />
-
-          
           <div className="absolute inset-x-4 inset-y-4 z-[1] flex flex-col items-center justify-center rounded-t-[12rem] rounded-b-[2.5rem] border border-white/40 bg-white/15 px-8 text-center shadow-[0_30px_80px_rgba(139,77,70,.12)] backdrop-blur-xl">
-            <p className="mb-8 text-[11px] uppercase tracking-[0.48em] text-[#bd7e77]">
-              Wedding Invitation
-            </p>
-          
-            <h1 className="font-serif text-[clamp(3.8rem,8vw,5.4rem)] font-light leading-[1.05] text-[#815a55]">
-              Dnyanesh
-              <span className="block py-3 text-[clamp(2rem,5vw,2.8rem)] italic text-[#bd8078]">
+            <div className="w-full max-w-[420px]">
+              <p className="mb-8 text-[11px] uppercase tracking-[0.48em] text-[#bd7e77]">
+                Wedding Invitation
+              </p>
+
+              <h1 className="font-serif text-[clamp(3rem,7vw,4.5rem)] font-light leading-[1.05] text-[#815a55]">
+                Dnyanesh
+              </h1>
+
+              <span className="mt-3 block font-serif text-4xl italic text-[#bd8078]">
                 &
               </span>
-              Pratiksha
-            </h1>
-          
-            <p className="mt-10 max-w-[350px] text-[16px] leading-8 text-[#936964]">
-              With love, joy, and blessings, we invite you to celebrate the
-              beginning of our forever.
-            </p>
-          
-            <div className="mt-10 h-px w-52 bg-gradient-to-r from-transparent via-[#dfaaa3] to-transparent" />
-          
-            <p className="mt-10 font-serif text-4xl italic text-[#a66f68]">
-              Save the Date
-            </p>
-          
-            <span className="mt-5 text-[11px] uppercase tracking-[0.45em] text-[#b88780]">
-              Saturday
-            </span>
-          
-            <span className="mt-3 font-serif text-5xl text-[#8a625d]">
-              27 June 2026
-            </span>
+
+              <h1 className="mt-3 font-serif text-[clamp(3rem,7vw,4.5rem)] font-light leading-[1.05] text-[#815a55]">
+                Pratiksha
+              </h1>
+
+              <p className="mx-auto mt-10 max-w-[320px] text-[15px] leading-8 text-[#936964]">
+                With love, joy, and blessings, we invite you to celebrate the
+                beginning of our forever.
+              </p>
+
+              <div className="mx-auto mt-10 h-px w-52 bg-gradient-to-r from-transparent via-[#dfaaa3] to-transparent" />
+
+              <p className="mt-10 font-serif text-3xl italic text-[#a66f68]">
+                Save the Date
+              </p>
+
+              <p className="mt-4 text-[11px] uppercase tracking-[0.45em] text-[#b88780]">
+                Saturday
+              </p>
+
+              <p className="mt-3 font-serif text-[clamp(2.6rem,6vw,4rem)] text-[#8a625d]">
+                27 June 2026
+              </p>
+            </div>
           </div>
         </div>
       </div>
@@ -183,10 +186,10 @@ export function DoorOpening({ onClose }: DoorOpeningProps) {
         @keyframes flowerBreathe {
           0%,
           100% {
-            transform: scale(1.18);
+            transform: scale(1.02);
           }
           50% {
-            transform: scale(1.23) translateY(-8px);
+            transform: scale(1.07) translateY(-8px);
           }
         }
       `}</style>
