@@ -14,7 +14,7 @@ export function DoorOpening({ onClose }: DoorOpeningProps) {
   const [hideIntro, setHideIntro] = useState(false)
 
   useEffect(() => {
-    const timer = setTimeout(openDoor, 1800)
+    const timer = setTimeout(openDoor, 1600)
     return () => clearTimeout(timer)
   }, [])
 
@@ -36,60 +36,49 @@ export function DoorOpening({ onClose }: DoorOpeningProps) {
   if (hideIntro) return null
 
   return (
-    <div className="fixed inset-0 z-50 overflow-hidden bg-[#f3c7c0]">
-      {/* Background invitation */}
-      <div className="absolute inset-0 z-0 flex items-center justify-center overflow-hidden bg-[#fff7f5]">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_12%,#fff_0%,#fff1ee_45%,#efbeb6_100%)]" />
+    <div className="fixed inset-0 z-50 overflow-hidden bg-[#f1c9c2]">
+      {/* Invitation */}
+      <div className="absolute inset-0 z-0 flex items-center justify-center overflow-hidden bg-[#f9ded9]">
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,#fff7f5_0%,#f8ddd8_48%,#efc1b9_100%)]" />
 
         <div
-          className={`relative mx-5 flex h-[86vh] w-[90vw] max-w-[470px] items-center justify-center rounded-t-[18rem] rounded-b-[3rem] border border-white/70 bg-[#f9dcd7]/70 shadow-[0_35px_100px_rgba(140,78,70,.25)] transition-all duration-[1400ms] ${
-            isOpen ? 'scale-100 opacity-100' : 'scale-95 opacity-80'
+          className={`relative flex h-[92vh] w-[min(92vw,520px)] items-center justify-center transition-all duration-[1400ms] ${
+            isOpen ? 'scale-100 opacity-100' : 'scale-95 opacity-70'
           }`}
         >
-          {/* Flowers placed OUTSIDE the main card */}
+          {/* Big floral frame behind card */}
           <Image
             src={flowers}
-            alt="Floral decoration"
+            alt="Floral frame"
             priority
-            className="flower-float pointer-events-none absolute -left-24 top-[17%] z-0 w-56 opacity-95"
+            className="flower-breathe pointer-events-none absolute inset-0 z-0 h-full w-full scale-[1.18] object-contain opacity-95"
           />
 
-          <Image
-            src={flowers}
-            alt="Floral decoration"
-            priority
-            className="flower-float-reverse pointer-events-none absolute -right-28 top-[35%] z-0 w-72 opacity-95"
-          />
-
-          <Image
-            src={flowers}
-            alt="Floral decoration"
-            priority
-            className="flower-float pointer-events-none absolute -bottom-16 right-0 z-0 w-64 opacity-90"
-          />
+          {/* Arch background */}
+          <div className="absolute inset-x-2 bottom-6 top-2 z-[1] rounded-t-full rounded-b-[2.5rem] border border-white/70 bg-[#f8d8d3]/55 shadow-[0_30px_100px_rgba(139,77,70,.22)]" />
 
           {/* Main card */}
-          <div className="relative z-10 mx-6 flex min-h-[67vh] w-full flex-col items-center justify-center rounded-b-[2.5rem] bg-[#fff4f1]/92 px-7 py-12 text-center shadow-[0_25px_70px_rgba(136,80,73,.18)] backdrop-blur-sm">
-            <p className="mb-8 text-[12px] uppercase tracking-[0.48em] text-[#bf7f78]">
+          <div className="relative z-10 mx-auto flex h-[78vh] w-[min(78vw,390px)] flex-col items-center justify-center rounded-b-[2.2rem] bg-[#fff4f1]/95 px-8 text-center shadow-[0_25px_70px_rgba(119,68,62,.18)] backdrop-blur-md">
+            <p className="mb-8 text-[11px] uppercase tracking-[0.48em] text-[#bd7e77]">
               Wedding Invitation
             </p>
 
-            <h1 className="font-serif text-[4.1rem] font-light leading-[1.05] text-[#875e59]">
+            <h1 className="font-serif text-[clamp(3rem,8vw,4.6rem)] font-light leading-[1.05] text-[#815a55]">
               Dnyanesh
-              <span className="block py-3 text-4xl italic text-[#bd7f77]">
+              <span className="block py-3 text-[clamp(2rem,5vw,2.7rem)] italic text-[#bd8078]">
                 &
               </span>
               Pratiksha
             </h1>
 
-            <p className="mt-10 max-w-[310px] text-base leading-8 text-[#936964]">
+            <p className="mt-10 max-w-[310px] text-[15px] leading-8 text-[#936964]">
               With love, joy, and blessings, we invite you to celebrate the
               beginning of our forever.
             </p>
 
-            <div className="mt-11 h-px w-44 bg-gradient-to-r from-transparent via-[#e2aaa3] to-transparent" />
+            <div className="mt-10 h-px w-44 bg-gradient-to-r from-transparent via-[#dfaaa3] to-transparent" />
 
-            <p className="mt-8 font-serif text-3xl italic text-[#a66e68]">
+            <p className="mt-8 font-serif text-3xl italic text-[#a66f68]">
               Save the Date
             </p>
           </div>
@@ -115,13 +104,11 @@ export function DoorOpening({ onClose }: DoorOpeningProps) {
         </div>
 
         <div
-          className={`absolute left-1/2 top-0 z-30 h-full w-[96px] -translate-x-1/2 transition-opacity duration-700 ${
+          className={`absolute left-1/2 top-0 z-30 h-full w-[90px] -translate-x-1/2 transition-opacity duration-700 ${
             isOpen ? 'opacity-0' : 'opacity-100'
           }`}
         >
           <div className="mx-auto h-full w-[2px] bg-white/80 shadow-[0_0_16px_rgba(255,255,255,.8)]" />
-          <div className="absolute left-1/2 top-0 h-[135px] w-[96px] -translate-x-1/2 rounded-t-full border-l-2 border-t-2 border-white/75" />
-          <div className="absolute bottom-0 left-1/2 h-[135px] w-[96px] -translate-x-1/2 rounded-b-full border-b-2 border-l-2 border-white/75" />
         </div>
 
         <button
@@ -184,31 +171,17 @@ export function DoorOpening({ onClose }: DoorOpeningProps) {
           backface-visibility: hidden;
         }
 
-        :global(.flower-float) {
-          animation: flowerFloat 6s ease-in-out infinite;
+        :global(.flower-breathe) {
+          animation: flowerBreathe 7s ease-in-out infinite;
         }
 
-        :global(.flower-float-reverse) {
-          animation: flowerFloatReverse 6.5s ease-in-out infinite;
-        }
-
-        @keyframes flowerFloat {
+        @keyframes flowerBreathe {
           0%,
           100% {
-            transform: translateY(0) scale(1);
+            transform: scale(1.18);
           }
           50% {
-            transform: translateY(-12px) scale(1.04);
-          }
-        }
-
-        @keyframes flowerFloatReverse {
-          0%,
-          100% {
-            transform: translateY(0) scale(1) rotate(0deg);
-          }
-          50% {
-            transform: translateY(12px) scale(1.035) rotate(1.5deg);
+            transform: scale(1.23) translateY(-8px);
           }
         }
       `}</style>
@@ -220,28 +193,15 @@ function PeachDoor({ side }: { side: 'left' | 'right' }) {
   return (
     <div className="relative h-full w-full overflow-hidden bg-[#f3c4bb]">
       <div className="absolute inset-0 bg-[linear-gradient(120deg,#fbe0db_0%,#efb7ad_45%,#f8d8d2_100%)]" />
-
       <div className="absolute inset-0 opacity-45 bg-[radial-gradient(circle_at_30%_20%,rgba(255,255,255,.6),transparent_28%),radial-gradient(circle_at_80%_70%,rgba(210,122,110,.22),transparent_32%)]" />
 
-      <div className="absolute inset-0 opacity-[0.13] bg-[repeating-linear-gradient(90deg,rgba(255,255,255,.5)_0_1px,transparent_1px_8px),repeating-linear-gradient(0deg,rgba(145,89,80,.22)_0_1px,transparent_1px_10px)]" />
-
       <div
-        className={`absolute top-0 h-full w-24 ${
+        className={`absolute top-0 h-full w-28 ${
           side === 'left'
-            ? 'right-0 bg-gradient-to-l from-[#d7968b]/50 to-transparent'
-            : 'left-0 bg-gradient-to-r from-[#d7968b]/50 to-transparent'
+            ? 'right-0 bg-gradient-to-l from-[#d7968b]/55 to-transparent'
+            : 'left-0 bg-gradient-to-r from-[#d7968b]/55 to-transparent'
         }`}
       />
-
-      <div
-        className={`absolute top-0 h-full w-20 ${
-          side === 'left'
-            ? 'left-0 bg-gradient-to-r from-white/25 to-transparent'
-            : 'right-0 bg-gradient-to-l from-white/25 to-transparent'
-        }`}
-      />
-
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(255,255,255,.3),transparent_55%)]" />
     </div>
   )
 }
