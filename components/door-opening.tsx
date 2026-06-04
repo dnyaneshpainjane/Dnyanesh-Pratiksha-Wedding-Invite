@@ -107,7 +107,6 @@ export function DoorOpening({ onClose }: DoorOpeningProps) {
         </div>
       </div>
 
-      {/* Door Layer */}
       <div className="absolute inset-0 z-20 perspective-[1800px]">
         <div
           className={`absolute left-0 top-0 h-full w-1/2 origin-left overflow-hidden transition-transform duration-[2200ms] ease-[cubic-bezier(.2,.9,.2,1)] ${
@@ -133,7 +132,6 @@ export function DoorOpening({ onClose }: DoorOpeningProps) {
           <div className="mx-auto h-full w-[2px] bg-white/80 shadow-[0_0_16px_rgba(255,255,255,.8)]" />
         </div>
 
-        {/* Wax Seal Button */}
         <button
           onClick={openDoor}
           disabled={isOpen}
@@ -148,7 +146,7 @@ export function DoorOpening({ onClose }: DoorOpeningProps) {
             src={sealButton}
             alt="Open invitation"
             priority
-            className="h-36 w-36 object-contain drop-shadow-[0_18px_40px_rgba(151,83,73,.35)] sm:h-40 sm:w-40"
+            className="seal-float h-36 w-36 object-contain drop-shadow-[0_18px_40px_rgba(151,83,73,.35)] sm:h-40 sm:w-40"
           />
         </button>
 
@@ -197,6 +195,10 @@ export function DoorOpening({ onClose }: DoorOpeningProps) {
           animation: flowerBreathe 7s ease-in-out infinite;
         }
 
+        :global(.seal-float) {
+          animation: sealFloat 4s ease-in-out infinite;
+        }
+
         @keyframes flowerBreathe {
           0%,
           100% {
@@ -204,6 +206,16 @@ export function DoorOpening({ onClose }: DoorOpeningProps) {
           }
           50% {
             transform: scale(1.06) translateY(-6px);
+          }
+        }
+
+        @keyframes sealFloat {
+          0%,
+          100% {
+            transform: translateY(0);
+          }
+          50% {
+            transform: translateY(-6px);
           }
         }
       `}</style>
