@@ -75,7 +75,7 @@ export function DoorOpening({ onClose }: DoorOpeningProps) {
 
               <div>
                 <p className="font-serif text-3xl italic text-[#a66f68]">
-                  D & P
+                  Save the date
                 </p>
 
                 <p className="mt-4 text-[11px] uppercase tracking-[0.45em] text-[#b88780]">
