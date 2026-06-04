@@ -37,8 +37,7 @@ export function DoorOpening({ onClose }: DoorOpeningProps) {
 
   return (
     <div className="fixed inset-0 z-50 overflow-hidden bg-[#f1c9c2]">
-      {/* Invitation */}
-      <div className="absolute inset-0 z-0 flex items-center justify-center overflow-hidden bg-[#f9ded9]">
+      <div className="absolute inset-0 z-0 flex items-center justify-center overflow-hidden bg-[#f8d5cf]">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,#fff7f5_0%,#f8ddd8_48%,#efc1b9_100%)]" />
 
         <div
@@ -46,7 +45,6 @@ export function DoorOpening({ onClose }: DoorOpeningProps) {
             isOpen ? 'scale-100 opacity-100' : 'scale-95 opacity-70'
           }`}
         >
-          {/* Big floral frame behind card */}
           <Image
             src={flowers}
             alt="Floral frame"
@@ -54,11 +52,9 @@ export function DoorOpening({ onClose }: DoorOpeningProps) {
             className="flower-breathe pointer-events-none absolute inset-0 z-0 h-full w-full scale-[1.18] object-contain opacity-95"
           />
 
-          {/* Arch background */}
-          <div className="absolute inset-x-2 bottom-6 top-2 z-[1] rounded-t-full rounded-b-[2.5rem] border border-white/70 bg-[#f8d8d3]/55 shadow-[0_30px_100px_rgba(139,77,70,.22)]" />
+          <div className="absolute inset-x-4 inset-y-4 z-[1] rounded-t-[12rem] rounded-b-[2.5rem] border border-white/70 bg-[#f8d8d3]/55 shadow-[0_30px_100px_rgba(139,77,70,.22)]" />
 
-          {/* Main card */}
-          <div className="relative z-10 mx-auto flex h-[78vh] w-[min(78vw,390px)] flex-col items-center justify-center rounded-b-[2.2rem] bg-[#fff4f1]/95 px-8 text-center shadow-[0_25px_70px_rgba(119,68,62,.18)] backdrop-blur-md">
+          <div className="relative z-10 m-4 flex h-[calc(100%-32px)] w-[calc(100%-32px)] flex-col items-center justify-center rounded-t-[12rem] rounded-b-[2.5rem] bg-[#fff4f1]/96 px-8 text-center shadow-[0_25px_70px_rgba(119,68,62,.18)] backdrop-blur-md">
             <p className="mb-8 text-[11px] uppercase tracking-[0.48em] text-[#bd7e77]">
               Wedding Invitation
             </p>
@@ -71,7 +67,7 @@ export function DoorOpening({ onClose }: DoorOpeningProps) {
               Pratiksha
             </h1>
 
-            <p className="mt-10 max-w-[310px] text-[15px] leading-8 text-[#936964]">
+            <p className="mt-10 max-w-[330px] text-[15px] leading-8 text-[#936964]">
               With love, joy, and blessings, we invite you to celebrate the
               beginning of our forever.
             </p>
@@ -85,7 +81,6 @@ export function DoorOpening({ onClose }: DoorOpeningProps) {
         </div>
       </div>
 
-      {/* Door layer */}
       <div className="absolute inset-0 z-20 perspective-[1800px]">
         <div
           className={`absolute left-0 top-0 h-full w-1/2 origin-left overflow-hidden transition-transform duration-[2200ms] ease-[cubic-bezier(.2,.9,.2,1)] ${
