@@ -181,7 +181,7 @@ export function DoorOpening({ onClose }: DoorOpeningProps) {
         }
       `}</style>
     </div>
-  )f
+  )
 }
 
 function PeachDoor({ side }: { side: 'left' | 'right' }) {
