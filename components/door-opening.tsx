@@ -91,9 +91,16 @@ export function DoorOpening({ onClose }: DoorOpeningProps) {
 
           <Image
             src={flowers}
-            alt="Floral frame"
+            alt="Top left floral decoration"
             priority
-            className="flower-breathe pointer-events-none absolute inset-0 z-[2] h-full w-full scale-[1.08] object-contain opacity-100"
+            className="flower-breathe pointer-events-none absolute -left-16 -top-10 z-[2] h-auto w-[210px] object-contain opacity-100 sm:-left-20 sm:-top-12 sm:w-[260px]"
+          />
+
+          <Image
+            src={flowers}
+            alt="Bottom right floral decoration"
+            priority
+            className="flower-breathe pointer-events-none absolute -bottom-10 -right-16 z-[2] h-auto w-[210px] rotate-180 object-contain opacity-100 sm:-bottom-12 sm:-right-20 sm:w-[260px]"
           />
         </div>
       </div>
@@ -191,10 +198,10 @@ export function DoorOpening({ onClose }: DoorOpeningProps) {
         @keyframes flowerBreathe {
           0%,
           100% {
-            transform: scale(1.08);
+            transform: scale(1);
           }
           50% {
-            transform: scale(1.13) translateY(-8px);
+            transform: scale(1.06) translateY(-6px);
           }
         }
       `}</style>
