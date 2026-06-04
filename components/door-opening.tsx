@@ -46,55 +46,55 @@ export function DoorOpening({ onClose }: DoorOpeningProps) {
             isOpen ? 'scale-100 opacity-100' : 'scale-95 opacity-70'
           }`}
         >
-          <Image
-            src={flowers}
-            alt="Floral frame"
-            priority
-            className="flower-breathe pointer-events-none absolute inset-0 z-0 h-full w-full scale-[1.02] object-contain opacity-95"
-          />
-
           <div className="absolute inset-x-4 inset-y-4 z-[1] rounded-t-[12rem] rounded-b-[2.5rem] border border-white/40 bg-white/15 px-6 py-10 text-center shadow-[0_30px_80px_rgba(139,77,70,.12)] backdrop-blur-xl sm:px-8">
             <div className="flex h-full w-full flex-col items-center justify-between">
               <p className="text-[11px] uppercase tracking-[0.48em] text-[#bd7e77]">
                 Wedding Invitation
               </p>
-          
+
               <div>
                 <h1 className="font-serif text-[clamp(3rem,6vw,4.2rem)] font-light leading-none text-[#815a55]">
                   Dnyanesh
                 </h1>
-          
+
                 <span className="mt-2 block font-serif text-4xl italic leading-none text-[#bd8078]">
                   &
                 </span>
-          
+
                 <h1 className="mt-2 font-serif text-[clamp(3rem,6vw,4.2rem)] font-light leading-none text-[#815a55]">
                   Pratiksha
                 </h1>
               </div>
-          
+
               <p className="max-w-[360px] text-[15px] leading-8 text-[#936964]">
-                With love, joy, and blessings, we invite you to celebrate the beginning of
-                our forever.
+                With love, joy, and blessings, we invite you to celebrate the
+                beginning of our forever.
               </p>
-          
+
               <div className="h-px w-52 bg-gradient-to-r from-transparent via-[#dfaaa3] to-transparent" />
-          
+
               <div>
                 <p className="font-serif text-3xl italic text-[#a66f68]">
                   Save the Date
                 </p>
-          
+
                 <p className="mt-4 text-[11px] uppercase tracking-[0.45em] text-[#b88780]">
                   Saturday
                 </p>
-          
-                <p className="mt-3 font-serif text-[clamp(2.8rem,6vw,4rem)] leading-none text-[#8a625d]">
+
+                <p className="mt-3 font-serif text-[clamp(1.8rem,4vw,2.6rem)] leading-none text-[#8a625d]">
                   27 June 2026
                 </p>
               </div>
             </div>
           </div>
+
+          <Image
+            src={flowers}
+            alt="Floral frame"
+            priority
+            className="flower-breathe pointer-events-none absolute inset-0 z-[2] h-full w-full scale-[1.08] object-contain opacity-100"
+          />
         </div>
       </div>
 
@@ -191,10 +191,10 @@ export function DoorOpening({ onClose }: DoorOpeningProps) {
         @keyframes flowerBreathe {
           0%,
           100% {
-            transform: scale(1.02);
+            transform: scale(1.08);
           }
           50% {
-            transform: scale(1.07) translateY(-8px);
+            transform: scale(1.13) translateY(-8px);
           }
         }
       `}</style>
