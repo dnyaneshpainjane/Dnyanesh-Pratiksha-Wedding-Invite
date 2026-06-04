@@ -5,6 +5,7 @@ import Image from 'next/image'
 import { X } from 'lucide-react'
 import flowers from '@/public/flowers.png'
 import sealButton from '@/public/button.png'
+import doorImage from '@/public/door.png'
 
 type DoorOpeningProps = {
   onClose: () => void
@@ -109,7 +110,7 @@ export function DoorOpening({ onClose }: DoorOpeningProps) {
 
       <div className="absolute inset-0 z-20 perspective-[1800px]">
         <div
-          className={`absolute left-0 top-0 h-full w-1/2 origin-left overflow-hidden transition-transform duration-[2200ms] ease-[cubic-bezier(.2,.9,.2,1)] ${
+          className={`absolute left-0 top-0 h-full w-[50.5%] origin-left overflow-hidden transition-transform duration-[2200ms] ease-[cubic-bezier(.2,.9,.2,1)] ${
             isOpen ? 'door-left-open' : 'door-left-closed'
           }`}
         >
@@ -117,19 +118,11 @@ export function DoorOpening({ onClose }: DoorOpeningProps) {
         </div>
 
         <div
-          className={`absolute right-0 top-0 h-full w-1/2 origin-right overflow-hidden transition-transform duration-[2200ms] ease-[cubic-bezier(.2,.9,.2,1)] ${
+          className={`absolute right-0 top-0 h-full w-[50.5%] origin-right overflow-hidden transition-transform duration-[2200ms] ease-[cubic-bezier(.2,.9,.2,1)] ${
             isOpen ? 'door-right-open' : 'door-right-closed'
           }`}
         >
           <PeachDoor side="right" />
-        </div>
-
-        <div
-          className={`absolute left-1/2 top-0 z-30 h-full w-[90px] -translate-x-1/2 transition-opacity duration-700 ${
-            isOpen ? 'opacity-0' : 'opacity-100'
-          }`}
-        >
-          <div className="mx-auto h-full w-[2px] bg-white/80 shadow-[0_0_16px_rgba(255,255,255,.8)]" />
         </div>
 
         <button
@@ -138,7 +131,7 @@ export function DoorOpening({ onClose }: DoorOpeningProps) {
           aria-label="Open invitation"
           className={`absolute left-1/2 top-1/2 z-50 -translate-x-1/2 -translate-y-1/2 transition-all duration-1000 ${
             isOpen
-              ? 'scale-75 opacity-0 blur-sm'
+              ? 'scale-50 opacity-0 blur-sm'
               : 'scale-100 opacity-100 hover:scale-105 active:scale-95'
           }`}
         >
@@ -146,7 +139,7 @@ export function DoorOpening({ onClose }: DoorOpeningProps) {
             src={sealButton}
             alt="Open invitation"
             priority
-            className="seal-float h-36 w-36 object-contain drop-shadow-[0_18px_40px_rgba(151,83,73,.35)] sm:h-40 sm:w-40"
+            className="seal-float h-44 w-44 object-contain drop-shadow-[0_20px_50px_rgba(0,0,0,.25)] sm:h-48 sm:w-48"
           />
         </button>
 
@@ -225,16 +218,23 @@ export function DoorOpening({ onClose }: DoorOpeningProps) {
 
 function PeachDoor({ side }: { side: 'left' | 'right' }) {
   return (
-    <div className="relative h-full w-full overflow-hidden bg-[#f3c4bb]">
-      <div className="absolute inset-0 bg-[linear-gradient(120deg,#fbe0db_0%,#efb7ad_45%,#f8d8d2_100%)]" />
-
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(255,255,255,.6),transparent_28%),radial-gradient(circle_at_80%_70%,rgba(210,122,110,.22),transparent_32%)] opacity-45" />
+    <div className="relative h-full w-full overflow-hidden">
+      <Image
+        src={doorImage}
+        alt="Wedding door"
+        fill
+        priority
+        sizes="50vw"
+        className={`object-cover ${
+          side === 'left' ? 'object-left' : 'object-right'
+        }`}
+      />
 
       <div
-        className={`absolute top-0 h-full w-28 ${
+        className={`absolute inset-y-0 w-16 ${
           side === 'left'
-            ? 'right-0 bg-gradient-to-l from-[#d7968b]/55 to-transparent'
-            : 'left-0 bg-gradient-to-r from-[#d7968b]/55 to-transparent'
+            ? 'right-0 bg-gradient-to-l from-black/10 to-transparent'
+            : 'left-0 bg-gradient-to-r from-black/10 to-transparent'
         }`}
       />
     </div>
