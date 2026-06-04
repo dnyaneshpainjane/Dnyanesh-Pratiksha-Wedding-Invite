@@ -52,35 +52,48 @@ export function DoorOpening({ onClose }: DoorOpeningProps) {
             className="flower-breathe pointer-events-none absolute inset-0 z-0 h-full w-full scale-[1.18] object-contain opacity-95"
           />
 
-          <div className="absolute inset-x-4 inset-y-4 z-[1] rounded-t-[12rem] rounded-b-[2.5rem] border border-white/70 bg-[#f8d8d3]/55 shadow-[0_30px_100px_rgba(139,77,70,.22)]" />
+          <div className="absolute inset-x-4 inset-y-4 z-[1] rounded-t-[12rem] rounded-b-[2.5rem] border border-white/60 bg-[#f8d8d3]/35 shadow-[0_30px_100px_rgba(139,77,70,.18)]" />
 
-          <div className="relative z-10 m-4 flex h-[calc(100%-32px)] w-[calc(100%-32px)] flex-col items-center justify-center rounded-t-[12rem] rounded-b-[2.5rem] border border-white/30 bg-white/45 px-8 text-center shadow-[0_25px_70px_rgba(119,68,62,.10)] backdrop-blur-3xl">
-            <p className="mb-8 text-[11px] uppercase tracking-[0.48em] text-[#bd7e77]">
-              Wedding Invitation
-            </p>
+          <div className="relative z-10 m-4 flex h-[calc(100%-32px)] w-[calc(100%-32px)] flex-col items-center justify-center rounded-t-[12rem] rounded-b-[2.5rem] border border-white/30 bg-white/35 px-8 text-center shadow-[0_25px_70px_rgba(119,68,62,.10)] backdrop-blur-xl">
+            <div className="rounded-[2rem] bg-white/15 px-8 py-10 backdrop-blur-sm">
+              <p className="mb-8 text-[11px] uppercase tracking-[0.48em] text-[#bd7e77]">
+                Wedding Invitation
+              </p>
 
-            <h1 className="font-serif text-[clamp(3rem,8vw,4.6rem)] font-light leading-[1.05] text-[#815a55]">
-              Dnyanesh
-              <span className="block py-3 text-[clamp(2rem,5vw,2.7rem)] italic text-[#bd8078]">
-                &
-              </span>
-              Pratiksha
-            </h1>
+              <h1 className="font-serif text-[clamp(3rem,8vw,4.6rem)] font-light leading-[1.05] text-[#815a55]">
+                Dnyanesh
+                <span className="block py-3 text-[clamp(2rem,5vw,2.7rem)] italic text-[#bd8078]">
+                  &
+                </span>
+                Pratiksha
+              </h1>
 
-            <p className="mt-10 max-w-[330px] text-[15px] leading-8 text-[#936964]">
-              With love, joy, and blessings, we invite you to celebrate the
-              beginning of our forever.
-            </p>
+              <p className="mt-10 max-w-[330px] text-[15px] leading-8 text-[#936964]">
+                With love, joy, and blessings, we invite you to celebrate the
+                beginning of our forever.
+              </p>
 
-            <div className="mt-10 h-px w-44 bg-gradient-to-r from-transparent via-[#dfaaa3] to-transparent" />
+              <div className="mx-auto mt-10 h-px w-44 bg-gradient-to-r from-transparent via-[#dfaaa3] to-transparent" />
 
-            <p className="mt-8 font-serif text-3xl italic text-[#a66f68]">
-              Save the Date
-            </p>
+              <p className="mt-8 font-serif text-3xl italic text-[#a66f68]">
+                Save the Date
+              </p>
+
+              <div className="mt-4 flex flex-col items-center">
+                <span className="text-[11px] uppercase tracking-[0.4em] text-[#b88780]">
+                  Saturday
+                </span>
+
+                <span className="mt-2 font-serif text-4xl text-[#8a625d]">
+                  27 June 2026
+                </span>
+              </div>
+            </div>
           </div>
         </div>
       </div>
 
+      {/* Door layer */}
       <div className="absolute inset-0 z-20 perspective-[1800px]">
         <div
           className={`absolute left-0 top-0 h-full w-1/2 origin-left overflow-hidden transition-transform duration-[2200ms] ease-[cubic-bezier(.2,.9,.2,1)] ${
