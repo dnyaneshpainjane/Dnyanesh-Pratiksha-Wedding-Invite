@@ -54,7 +54,7 @@ export function DoorOpening({ onClose }: DoorOpeningProps) {
 
           <div className="absolute inset-x-4 inset-y-4 z-[1] rounded-t-[12rem] rounded-b-[2.5rem] border border-white/70 bg-[#f8d8d3]/55 shadow-[0_30px_100px_rgba(139,77,70,.22)]" />
 
-          <div className="relative z-10 m-4 flex h-[calc(100%-32px)] w-[calc(100%-32px)] flex-col items-center justify-center rounded-t-[12rem] rounded-b-[2.5rem] border border-white/40 bg-white/55 px-8 text-center shadow-[0_25px_70px_rgba(119,68,62,.12)] backdrop-blur-2xl">
+          <div className="relative z-10 m-4 flex h-[calc(100%-32px)] w-[calc(100%-32px)] flex-col items-center justify-center rounded-t-[12rem] rounded-b-[2.5rem] border border-white/30 bg-white/45 px-8 text-center shadow-[0_25px_70px_rgba(119,68,62,.10)] backdrop-blur-3xl">
             <p className="mb-8 text-[11px] uppercase tracking-[0.48em] text-[#bd7e77]">
               Wedding Invitation
             </p>
