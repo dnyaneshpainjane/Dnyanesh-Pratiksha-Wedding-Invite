@@ -160,7 +160,7 @@ export function AudioProvider({ children }: { children: React.ReactNode }) {
         ref={audioRef}
         loop
         crossOrigin="anonymous"
-        src="wedding_music.mp3"
+        src="wedding_music2.mp3"
       />
       {children}
     </AudioContext.Provider>
