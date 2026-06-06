@@ -3,7 +3,7 @@
 import { Heart, Mail, Phone } from 'lucide-react'
 
 export function Footer() {
-  const currentYear = new Date().getFullYear()
+  const currentYear = new Date().getFullYear() +1
 
   return (
     <footer className="relative py-16 md:py-24 overflow-hidden">
