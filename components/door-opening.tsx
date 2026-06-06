@@ -33,7 +33,7 @@ export function DoorOpening({ onClose }: DoorOpeningProps) {
     timeoutRef.current = setTimeout(() => {
       setHideIntro(true)
       onClose()
-    }, 7200)
+    }, 5000)
   }
 
   const closeIntro = () => {
