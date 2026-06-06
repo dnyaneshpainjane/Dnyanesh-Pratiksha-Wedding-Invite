@@ -144,13 +144,22 @@ export function AudioProvider({ children }: { children: React.ReactNode }) {
   const toggleMute = () => {
     const audio = audioRef.current
     if (!audio) return
-
+  
+    clearFade()
+  
     if (isMuted) {
+      audio.muted = false
+      audio.volume = TARGET_VOLUME
+  
+      audio.play().catch(() => {})
+  
       setIsMuted(false)
-      playSlowly()
+      setIsPlaying(true)
     } else {
+      audio.muted = true
+  
       setIsMuted(true)
-      stopSlowly()
+      setIsPlaying(false)
     }
   }
 
